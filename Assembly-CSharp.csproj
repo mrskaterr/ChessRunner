@@ -40,8 +40,12 @@
      <Compile Include="Assets\Script\Mouse.cs" />
      <Compile Include="Assets\Script\KnightPosition.cs" />
      <Compile Include="Assets\Script\EnemyTower.cs" />
+     <Compile Include="Assets\Script\ChessBoardArray.cs" />
+     <Compile Include="Assets\Script\SpawnEnemy.cs" />
      <Compile Include="Assets\Script\FieldMove.cs" />
      <Compile Include="Assets\Script\AbcdefghMove.cs" />
+     <Compile Include="Assets\Script\EnemyHetman.cs" />
+     <Compile Include="Assets\Script\GameOver.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.17f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

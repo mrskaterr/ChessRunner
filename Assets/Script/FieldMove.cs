@@ -1,26 +1,31 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldMove : MonoBehaviour
 {
-    Transform Field;
-    int Count;
+    Transform Fields;
     int HowMany;
     void Start()
     {
-        Count=gameObject.transform.childCount;
-        HowMany=Count;
+        HowMany=transform.childCount;
     }
     void Update()
     {
-        for(int i=0;i<Count;i++){
-            Field=gameObject.transform.GetChild(i).gameObject.transform;
-            Field.position=new Vector3(Field.position.x,Field.position.y-0.001f,Field.position.z);
-            if(Field.position.y<=-2){
-                Field.position=new Vector3(Field.position.x,18f,Field.position.z);
+        for(int i=0;i<transform.childCount;i++){
+            Fields=gameObject.transform.GetChild(i);
+            Fields.position=new Vector3(Fields.position.x,Fields.position.y-0.002f,Fields.position.z);
+            if(Fields.position.y<=-2){
+                GetComponent<ChessBoardArray>().UpdateArray();
+                for(int j=0;j<Fields.childCount;j++){
+                    if(Fields.GetChild(j).childCount==1){
+                        Destroy(Fields.GetChild(j).GetChild(0).gameObject);
+                    }
+                }
+                Fields.position=new Vector3(Fields.position.x,16f,Fields.position.z);
+                GetComponent<SpawnEnemy>().Spawn(Fields);
                 ++HowMany;
-                Field.name=HowMany.ToString();
+                Fields.name=HowMany.ToString();
             }
 
         }

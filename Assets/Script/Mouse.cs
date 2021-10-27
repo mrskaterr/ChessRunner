@@ -6,6 +6,11 @@ using UnityEngine;
 public class Mouse : MonoBehaviour
 {
   Transform Knight;
+  int KnightNumber;
+  int ClickedNumber;
+  char KnightLetter;
+  char ClickedLetter;
+
   // Start is called before the first frame update
   void Start()
   {
@@ -13,10 +18,10 @@ public class Mouse : MonoBehaviour
   }
   void OnMouseDown()
   {
-    int KnightNumber=int.Parse(Knight.parent.parent.name);
-    int ClickedNumber=int.Parse(this.gameObject.transform.parent.name);
-    char KnightLetter=Knight.parent.name[0];
-    char ClickedLetter=this.gameObject.name[0];
+    KnightNumber=int.Parse(Knight.parent.parent.name);
+    ClickedNumber=int.Parse(this.gameObject.transform.parent.name);
+    KnightLetter=Knight.parent.name[0];
+    ClickedLetter=this.gameObject.name[0];
 
     if((KnightNumber+1==ClickedNumber || KnightNumber-1==ClickedNumber) 
     && (KnightLetter+2==ClickedLetter || KnightLetter-2==ClickedLetter))
