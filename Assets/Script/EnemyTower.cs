@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyTower : GameOver
+public class EnemyTower : GameFunction
 {
     // Start is called before the first frame update
     Transform ChessBoard;
@@ -14,25 +14,14 @@ public class EnemyTower : GameOver
     {
         ChessBoard=transform.parent.parent.parent;
         TowerLetter=transform.parent.GetSiblingIndex();
-        TowerNumber=17;
+        TowerNumber=transform.parent.parent.parent.childCount-1;
     }
     // Update is called once per frame
     void Update()
     {
-        transform.position=new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y,-1);//AutoPosition
-        for(int i=0;i<8;i++){
-            if(ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[TowerNumber].GetChild(i).childCount==1 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[TowerNumber].GetChild(i).GetChild(0).name=="Knight")
-                Die();
-        }
-        for(int i=0;i<ChessBoard.childCount;i++){
-            if(ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[i].GetChild(TowerLetter).childCount==1 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[i].GetChild(TowerLetter).GetChild(0).name=="Knight" )
-                Die();
-            /*if(transform.parent.parent.parent.GetChild(i).GetChild((int)TowerLetter-65).childCount==1 
-            && transform.parent.parent.parent.GetChild(i).GetChild((int)TowerLetter-65).GetChild(0).name=="Knight")
-                SceneManager.LoadScene("Game");*/
-        }
+        AutoPosition(transform);
+        if(transform.position.y<13)
+            prostyatak(ChessBoard,TowerNumber,TowerLetter);
     }
     public void ChangeTowerNumber(){
         --TowerNumber;

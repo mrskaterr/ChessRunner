@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyBishop : GameOver
+public class EnemyBishop : GameFunction
 {
     Transform ChessBoard;
+    Transform Parent;
     int BishopLetter;
     int BishopNumber;
     // Start is called before the first frame update
@@ -13,35 +14,18 @@ public class EnemyBishop : GameOver
     {
         ChessBoard=transform.parent.parent.parent;
         BishopLetter=transform.parent.GetSiblingIndex();
-        BishopNumber=17;
+        BishopNumber=transform.parent.parent.parent.childCount-1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position=new Vector3(transform.parent.transform.position.x, transform.parent.transform.position.y,-1);//AutoPosition
-        for(int i=BishopLetter,j=0;i<8;i++,j++){
-            if(BishopNumber+j<18 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber+j].GetChild(i).childCount==1
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber+j].GetChild(i).GetChild(0).name=="Knight")
-                Die();
-            if(BishopNumber-j>=0 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber-j].GetChild(i).childCount==1 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber-j].GetChild(i).GetChild(0).name=="Knight")
-                Die();
-        }
-        for(int i=BishopLetter,j=0;i>=0;i--,j++){
-            if(BishopNumber+j<18
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber+j].GetChild(i).childCount==1
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber+j].GetChild(i).GetChild(0).name=="Knight")
-                Die();
-            if(BishopNumber-j>=0 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber-j].GetChild(i).childCount==1 
-            && ChessBoard.GetComponent<ChessBoardArray>().ChessBoard[BishopNumber-j].GetChild(i).GetChild(0).name=="Knight")
-                Die();
-        }
+        AutoPosition(transform);
+        if(transform.position.y<13)
+            krzywyatak(ChessBoard,BishopNumber,BishopLetter);
     }
     public void ChangeBishopNumber(){
         --BishopNumber;
     }
+    
 }
