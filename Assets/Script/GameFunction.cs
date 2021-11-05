@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameFunction : MonoBehaviour
 {
-    Transform[] Board;
+    public Transform[] Board;
     string Knight="Knight";
     string Tower="Tower(Clone)";
     string Bishop="Bishop(Clone)";
+    string Pawn="Pawn(Clone)";
     public void Die(){
         //SceneManager.LoadScene("Game");
         Debug.Log("YOU DIE");
@@ -25,12 +26,16 @@ public class GameFunction : MonoBehaviour
                                     -1);
     }
     public void PawnAttack(Transform ChessBoard,int Number,int Letter){
-        Board=ChessBoard.GetComponent<ChessBoardArray>().ChessBoard;
-        if((Number-1>=0 && Letter-1>=0 && Letter+1<8)){
-            if((Board[Number-1].GetChild(Letter-1).childCount==1
+        Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
+        if((Number-1>=0 && Letter>=0 && Letter+1<8)){
+            if(Board[Number-1].GetChild(Letter+1).childCount==1
+            &&  Board[Number-1].GetChild(Letter+1).GetChild(0).name==Knight)
+                Die();
+            else{}
+        }
+        if((Number-1>=0 && Letter-1>=0)){
+            if(Board[Number-1].GetChild(Letter-1).childCount==1
             &&  Board[Number-1].GetChild(Letter-1).GetChild(0).name==Knight)
-            || (Board[Number-1].GetChild(Letter+1).childCount==1
-            &&  Board[Number-1].GetChild(Letter+1).GetChild(0).name==Knight))
                 Die();
             else{}
         }
@@ -38,9 +43,10 @@ public class GameFunction : MonoBehaviour
     }
     bool krzywyatakWarunek(int Number,int i, int j){
             //if(Number+j<18)Board[Number+j].GetChild(i).localScale=new Vector3(.5f,.5f,.5f);
-            if(Number+j<18 && Board[Number+j].GetChild(i).childCount==1){
+            if(Number+j<Board.Length && Board[Number+j].GetChild(i).childCount==1){
                 if(Board[Number+j].GetChild(i).GetChild(0).name==Knight)Die();
                 else if(Board[Number+j].GetChild(i).GetChild(0).name==Tower)return true;
+                else if(Board[Number+j].GetChild(i).GetChild(0).name==Pawn)return true;
             }
             return false;
     }
@@ -48,11 +54,12 @@ public class GameFunction : MonoBehaviour
          if(Number-j>=0 && Board[Number-j].GetChild(i).childCount==1){
                 if( Board[Number-j].GetChild(i).GetChild(0).name==Knight)Die();
                 else if(Board[Number-j].GetChild(i).GetChild(0).name==Tower)return true;
+                else if(Board[Number-j].GetChild(i).GetChild(0).name==Pawn)return true;
             }
             return false;
     }
     public void krzywyatak(Transform ChessBoard,int Number,int Letter){
-        Board=ChessBoard.GetComponent<ChessBoardArray>().ChessBoard;
+        Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
         for(int i=Letter,j=0;i<8;i++,j++)
             if(krzywyatakWarunek(Number,i,j))break;
         for(int i=Letter,j=0;i<8;i++,j++)
@@ -68,6 +75,7 @@ public class GameFunction : MonoBehaviour
         if(Board[i].GetChild(Letter).childCount==1){
             if(Board[i].GetChild(Letter).GetChild(0).name==Knight) Die();
             else if(Board[i].GetChild(Letter).GetChild(0).name==Bishop) return true;
+            else if(Board[i].GetChild(Letter).GetChild(0).name==Pawn) return true;
         }
         return false;
     }
@@ -75,11 +83,12 @@ public class GameFunction : MonoBehaviour
             if(Board[Number].GetChild(i).childCount==1){
                 if( Board[Number].GetChild(i).GetChild(0).name==Knight)Die();
                 else if(Board[Number].GetChild(i).GetChild(0).name==Bishop)return true;
+                else if(Board[Number].GetChild(i).GetChild(0).name==Pawn)return true;
             }
         return false;
     }
     public void prostyatak(Transform ChessBoard,int Number,int Letter){
-        Board=ChessBoard.GetComponent<ChessBoardArray>().ChessBoard;
+        Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
         for(int i=Letter;i<8;i++){
             if(prostyatakwarunek(Number,Letter,i))break;
         }

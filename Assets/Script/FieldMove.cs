@@ -28,14 +28,14 @@ public class FieldMove : MonoBehaviour
         for(int i=0;i<transform.childCount;i++){
             Fields=gameObject.transform.GetChild(i);
             Fields.position=new Vector3(Fields.position.x,Fields.position.y-0.001f*Speed,Fields.position.z);
-            if(Fields.position.y<=-2){
+            if(Fields.position.y<=-1){
                 GetComponent<ChessBoardArray>().UpdateArray();
                 for(int j=0;j<Fields.childCount;j++){
                     if(Fields.GetChild(j).childCount==1){
                         Destroy(Fields.GetChild(j).GetChild(0).gameObject);
                     }
                 }
-                Fields.position=new Vector3(Fields.position.x,16f,Fields.position.z);
+                Fields.position=new Vector3(Fields.position.x,transform.childCount-1,Fields.position.z);
                 GetComponent<SpawnEnemy>().Spawn(Fields);
                 ++HowMany;
                 Fields.name=HowMany.ToString();

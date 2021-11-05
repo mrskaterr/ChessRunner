@@ -22,12 +22,13 @@ public class Mouse : MonoBehaviour
     ClickedNumber=int.Parse(this.gameObject.transform.parent.name);
     KnightLetter=Knight.parent.name[0];
     ClickedLetter=this.gameObject.name[0];
-
-    if((KnightNumber+1==ClickedNumber || KnightNumber-1==ClickedNumber) 
-    && (KnightLetter+2==ClickedLetter || KnightLetter-2==ClickedLetter))
+    if(this.gameObject.transform.position.y<9.5f){
+      if((KnightNumber+1==ClickedNumber || KnightNumber-1==ClickedNumber) 
+      && (KnightLetter+2==ClickedLetter || KnightLetter-2==ClickedLetter))
       Knight.SetParent(this.gameObject.transform);
-    if((KnightNumber+2==ClickedNumber || KnightNumber-2==ClickedNumber) 
-    && (KnightLetter-1==ClickedLetter || KnightLetter+1==ClickedLetter))
-      Knight.SetParent(this.gameObject.transform);
+      else if((KnightNumber+2==ClickedNumber || KnightNumber-2==ClickedNumber) 
+      && (KnightLetter-1==ClickedLetter || KnightLetter+1==ClickedLetter))
+      Knight.SetParent(this.gameObject.transform);  
+    }
   }  
 }

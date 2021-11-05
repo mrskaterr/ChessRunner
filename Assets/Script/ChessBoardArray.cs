@@ -5,37 +5,35 @@ using UnityEngine;
 public class ChessBoardArray : GameFunction
 {
     // Start is called before the first frame update
-    public Transform[] ChessBoard;
-
     void Start()
     {
-        ChessBoard=new Transform[transform.childCount];
+        Board=new Transform[transform.childCount];
         for(int i=0;i<transform.childCount;i++){
-            ChessBoard[i]=transform.GetChild(i);
+            Board[i]=transform.GetChild(i);
         }
     }
     public void UpdateArray(){
         Transform[] NewBoard=new Transform[transform.childCount];
         for(int i=1;i<transform.childCount;i++)
         {
-            NewBoard[i-1]=ChessBoard[i];
+            NewBoard[i-1]=Board[i];
         }
-        NewBoard[transform.childCount-1]=ChessBoard[0];
-        ChessBoard=NewBoard;
+        NewBoard[transform.childCount-1]=Board[0];
+        Board=NewBoard;
         for(int i=0;i<transform.childCount;i++){
             for(int j=0;j<8;j++){
-                if(ChessBoard[i].GetChild(j).childCount==1 
-                && ChessBoard[i].GetChild(j).GetChild(0).name=="Bishop(Clone)")
-                    ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyBishop>().ChangeBishopNumber();
-                if(ChessBoard[i].GetChild(j).childCount==1 
-                && ChessBoard[i].GetChild(j).GetChild(0).name=="Hetman(Clone)")
-                    ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyHetman>().ChangeHetmanNumber();
-                if(ChessBoard[i].GetChild(j).childCount==1 
-                && ChessBoard[i].GetChild(j).GetChild(0).name=="Tower(Clone)")
-                    ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyTower>().ChangeTowerNumber();
-                if(ChessBoard[i].GetChild(j).childCount==1 
-                && ChessBoard[i].GetChild(j).GetChild(0).name=="Pawn(Clone)")
-                    ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyPawn>().ChangePawnNumber();
+                if(Board[i].GetChild(j).childCount==1 
+                && Board[i].GetChild(j).GetChild(0).name=="Bishop(Clone)")
+                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyBishop>().ChangeBishopNumber();
+                if(Board[i].GetChild(j).childCount==1 
+                && Board[i].GetChild(j).GetChild(0).name=="Hetman(Clone)")
+                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyHetman>().ChangeHetmanNumber();
+                if(Board[i].GetChild(j).childCount==1 
+                && Board[i].GetChild(j).GetChild(0).name=="Tower(Clone)")
+                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyTower>().ChangeTowerNumber();
+                if(Board[i].GetChild(j).childCount==1 
+                && Board[i].GetChild(j).GetChild(0).name=="Pawn(Clone)")
+                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyPawn>().ChangePawnNumber();
             }
         }
     }
