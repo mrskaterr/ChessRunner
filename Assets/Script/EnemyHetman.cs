@@ -25,6 +25,7 @@ public class EnemyHetman : GameFunction
             krzywyatak(ChessBoard,HetmanNumber,HetmanLetter);
         }
         
+        
     }
     public void ChangeHetmanNumber(){
         --HetmanNumber;

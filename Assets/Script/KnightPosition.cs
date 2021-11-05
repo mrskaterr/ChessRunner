@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,11 +14,12 @@ public class KnightPosition : GameFunction
     void Update()
     {
         AutoPosition(Knight);
-        if(Knight.parent.childCount>1)
+        if(Knight.position.y<=-1)Die();
+        if(Knight.parent.childCount>0)
             for(int i=0;i<Knight.parent.childCount;i++){
                 if(Knight.parent.GetChild(i).transform!=Knight)
                     Destroy(Knight.parent.GetChild(i).gameObject);
             }
-        if(Knight.position.y<=-1)Die();
+        
     }
 }

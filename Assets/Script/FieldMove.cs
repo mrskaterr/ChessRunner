@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FieldMove : MonoBehaviour
 {
+    
     Transform Fields;
     public GameObject Abcdefgh;
+    public GameObject ScoreTxt;
     int HowMany;
     public int Speed;
     void Start()
     {
+        
         HowMany=transform.childCount;
     }
     void Update()
     {
+        ScoreTxt.GetComponent<Text>().text=HowMany.ToString();
         if(Abcdefgh){
             if(transform.position.y<=-2){
                 Destroy(Abcdefgh);
@@ -39,6 +44,7 @@ public class FieldMove : MonoBehaviour
                 GetComponent<SpawnEnemy>().Spawn(Fields);
                 ++HowMany;
                 Fields.name=HowMany.ToString();
+                ScoreTxt.GetComponent<Text>().text=HowMany.ToString();
             }
 
         }

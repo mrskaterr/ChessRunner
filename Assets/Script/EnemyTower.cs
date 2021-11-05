@@ -7,7 +7,7 @@ public class EnemyTower : GameFunction
 {
     // Start is called before the first frame update
     Transform ChessBoard;
-        int TowerLetter;
+    int TowerLetter;
     int TowerNumber;
     void Start()
     {
