@@ -20,11 +20,11 @@ public class EnemyHetman : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(transform.position.y<13){
+        if(RedLine(transform)){
             prostyatak(ChessBoard,HetmanNumber,HetmanLetter);
             krzywyatak(ChessBoard,HetmanNumber,HetmanLetter);
         }
-
+        
     }
     public void ChangeHetmanNumber(){
         --HetmanNumber;

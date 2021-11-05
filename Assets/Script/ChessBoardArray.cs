@@ -33,6 +33,9 @@ public class ChessBoardArray : GameFunction
                 if(ChessBoard[i].GetChild(j).childCount==1 
                 && ChessBoard[i].GetChild(j).GetChild(0).name=="Tower(Clone)")
                     ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyTower>().ChangeTowerNumber();
+                if(ChessBoard[i].GetChild(j).childCount==1 
+                && ChessBoard[i].GetChild(j).GetChild(0).name=="Pawn(Clone)")
+                    ChessBoard[i].GetChild(j).GetChild(0).GetComponent<EnemyPawn>().ChangePawnNumber();
             }
         }
     }

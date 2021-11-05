@@ -7,8 +7,7 @@ public class EnemyTower : GameFunction
 {
     // Start is called before the first frame update
     Transform ChessBoard;
-    int Count;
-    int TowerLetter;
+        int TowerLetter;
     int TowerNumber;
     void Start()
     {
@@ -20,8 +19,9 @@ public class EnemyTower : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(transform.position.y<13)
+        if(RedLine(transform)){
             prostyatak(ChessBoard,TowerNumber,TowerLetter);
+        }
     }
     public void ChangeTowerNumber(){
         --TowerNumber;

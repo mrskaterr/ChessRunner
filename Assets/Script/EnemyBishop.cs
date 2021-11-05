@@ -21,8 +21,9 @@ public class EnemyBishop : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(transform.position.y<13)
+        if(RedLine(transform)){
             krzywyatak(ChessBoard,BishopNumber,BishopLetter);
+        }
     }
     public void ChangeBishopNumber(){
         --BishopNumber;
