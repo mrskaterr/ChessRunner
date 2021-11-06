@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChessBoardArray : GameFunction
 {
+    Transform Character;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,21 +23,23 @@ public class ChessBoardArray : GameFunction
         Board=NewBoard;
         for(int i=0;i<transform.childCount;i++){
             for(int j=0;j<8;j++){
-                if(Board[i].GetChild(j).childCount==1 
-                && Board[i].GetChild(j).GetChild(0).name=="Bishop(Clone)")
-                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyBishop>().ChangeBishopNumber();
-                if(Board[i].GetChild(j).childCount==1 
-                && Board[i].GetChild(j).GetChild(0).name=="Hetman(Clone)")
-                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyHetman>().ChangeHetmanNumber();
-                if(Board[i].GetChild(j).childCount==1 
-                && Board[i].GetChild(j).GetChild(0).name=="Tower(Clone)")
-                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyTower>().ChangeTowerNumber();
-                if(Board[i].GetChild(j).childCount==1 
-                && Board[i].GetChild(j).GetChild(0).name=="Pawn(Clone)")
-                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyPawn>().ChangePawnNumber();
-                if(Board[i].GetChild(j).childCount==1 
-                && Board[i].GetChild(j).GetChild(0).name=="BlackKnight(Clone)")
-                    Board[i].GetChild(j).GetChild(0).GetComponent<EnemyKnight>().ChangeKnightNumber();
+                if(Board[i].GetChild(j).childCount==1)
+                {
+                    Character=Board[i].GetChild(j).GetChild(0);
+
+                    if(Character.GetComponent<EnemyBishop>())
+                        Character.GetComponent<EnemyBishop>().ChangeBishopNumber();
+                    if(Character.GetComponent<EnemyHetman>())
+                        Character.GetComponent<EnemyHetman>().ChangeHetmanNumber();
+                    if(Character.GetComponent<EnemyTower>())
+                        Character.GetComponent<EnemyTower>().ChangeTowerNumber();
+                    if(Character.GetComponent<EnemyPawn>())
+                        Character.GetComponent<EnemyPawn>().ChangePawnNumber();
+                    if(Character.GetComponent<EnemyKnight>())
+                        Character.GetComponent<EnemyKnight>().ChangeKnightNumber();
+                }
+                
+                
             }
         }
     }
