@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class KnightPosition : GameFunction
+public class PlayerKnight : GameFunction
 {
     Transform Knight;
     void Start()

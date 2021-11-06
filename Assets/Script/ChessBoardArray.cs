@@ -29,13 +29,13 @@ public class ChessBoardArray : GameFunction
 
                     if(Character.GetComponent<EnemyBishop>())
                         Character.GetComponent<EnemyBishop>().ChangeBishopNumber();
-                    if(Character.GetComponent<EnemyHetman>())
+                    else if(Character.GetComponent<EnemyHetman>())
                         Character.GetComponent<EnemyHetman>().ChangeHetmanNumber();
-                    if(Character.GetComponent<EnemyTower>())
+                    else if(Character.GetComponent<EnemyTower>())
                         Character.GetComponent<EnemyTower>().ChangeTowerNumber();
-                    if(Character.GetComponent<EnemyPawn>())
+                    else if(Character.GetComponent<EnemyPawn>())
                         Character.GetComponent<EnemyPawn>().ChangePawnNumber();
-                    if(Character.GetComponent<EnemyKnight>())
+                    else if(Character.GetComponent<EnemyKnight>())
                         Character.GetComponent<EnemyKnight>().ChangeKnightNumber();
                 }
                 
