@@ -20,7 +20,7 @@ public class FieldMove : MonoBehaviour
     {
         ScoreTxt.GetComponent<Text>().text=HowMany.ToString();
         if(Abcdefgh){
-            if(transform.position.y<=-2){
+            if(Abcdefgh.transform.position.y<=-2){
                 Destroy(Abcdefgh);
             }
             else

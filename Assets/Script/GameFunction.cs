@@ -24,68 +24,53 @@ public class GameFunction : MonoBehaviour
                                     Chessman.parent.transform.position.y,
                                     -1);
     }
+    public void IsPlayerDie(Transform[] ChessBoard,int i,int j){
+        if(Board[i].GetChild(j).childCount==1
+            &&  Board[i].GetChild(j).GetChild(0).GetComponent<PlayerKnight>())
+                Die();
+        else
+            {}
+    }
     public void PawnAttack(Transform ChessBoard,int Number,int Letter)
     {
         Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
-        if((Number-1>=0 && Letter>=0 && Letter+1<8)){
-            if(Board[Number-1].GetChild(Letter+1).childCount==1
-            &&  Board[Number-1].GetChild(Letter+1).GetChild(0).GetComponent<PlayerKnight>())
-                Die();
-            else{}
-        }
-        if((Number-1>=0 && Letter-1>=0)){
-            if(Board[Number-1].GetChild(Letter-1).childCount==1
-            &&  Board[Number-1].GetChild(Letter-1).GetChild(0).GetComponent<PlayerKnight>())
-                Die();
-            else{}
-        }
+        if((Number-1>=0 && Letter>=0 && Letter+1<8))
+            IsPlayerDie(Board,Number-1,Letter+1);
+        
+        if((Number-1>=0 && Letter-1>=0))
+            IsPlayerDie(Board,Number-1,Letter-1);
+        
 
     }
     public void KnightAttack(Transform ChessBoard,int Number,int Letter)
     {
         Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
-        if(Number+1<Board.Length && Letter+2<8 
-        && Board[Number+1].GetChild(Letter+2).childCount==1
-        && Board[Number+1].GetChild(Letter+2).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number-1>=0 && Letter+2<8 
-        && Board[Number-1].GetChild(Letter+2).childCount==1
-        && Board[Number-1].GetChild(Letter+2).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number+1<Board.Length && Letter-2>=0
-        && Board[Number+1].GetChild(Letter-2).childCount==1
-        && Board[Number+1].GetChild(Letter-2).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number-1>=0 && Letter-2>=0
-        && Board[Number-1].GetChild(Letter-2).childCount==1
-        && Board[Number-1].GetChild(Letter-2).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number+2<Board.Length && Letter+1<8 
-        && Board[Number+2].GetChild(Letter+1).childCount==1
-        && Board[Number+2].GetChild(Letter+1).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number-2>=0 && Letter+1<8
-        && Board[Number-2].GetChild(Letter+1).childCount==1
-        && Board[Number-2].GetChild(Letter+1).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number+2<Board.Length && Letter-1>=0
-        && Board[Number+2].GetChild(Letter-1).childCount==1
-        && Board[Number+2].GetChild(Letter-1).GetChild(0).GetComponent<PlayerKnight>())
-            Die();
-        else if(Number-2>=0 && Letter-1>=0
-        && Board[Number-2].GetChild(Letter-1).childCount==1
-        && Board[Number-2].GetChild(Letter-1).GetChild(0).GetComponent<PlayerKnight>())
-            Die();     
-        else{}
-         
+        if(Number+1<Board.Length && Letter+2<8)
+            IsPlayerDie(Board,Number+1,Letter+2);
+        else if(Number-1>=0 &&Letter+2<8)
+            IsPlayerDie(Board,Number+1,Letter+2);
+        else if(Number+1<Board.Length && Letter-2>=0)
+            IsPlayerDie(Board,Number+1,Letter-2);
+        else if(Number-1>=0 && Letter-2>=0)
+            IsPlayerDie(Board,Number-1,Letter-2);
+        else if(Number+2<Board.Length && Letter+1<8)
+            IsPlayerDie(Board,Number+2,Letter+1);
+        else if(Number-2>=0 && Letter+1<8)
+            IsPlayerDie(Board,Number-2,Letter+1);
+        else if(Number+2<Board.Length && Letter-1>=0)
+            IsPlayerDie(Board,Number+2,Letter-1);
+        else if(Number-2>=0 && Letter-1>=0)
+            IsPlayerDie(Board,Number-2,Letter-1);    
+        else{} 
     }
 
     public bool krzywyatakWarunek(int Number,int i, int j)
     {
-            //if(Number+j<18)Board[Number+j].GetChild(i).localScale=new Vector3(.5f,.5f,.5f);
+
+            
             if(Number+j<Board.Length && Board[Number+j].GetChild(i).childCount==1){
-                if(Board[Number+j].GetChild(i).GetChild(0).GetComponent<PlayerKnight>())Die();
-                else if(Board[Number+j].GetChild(i).GetChild(0).GetComponent<EnemyTower>())return true;
+                IsPlayerDie(Board,Number+j,i);
+                if(Board[Number+j].GetChild(i).GetChild(0).GetComponent<EnemyTower>())return true;
                 else if(Board[Number+j].GetChild(i).GetChild(0).GetComponent<EnemyPawn>())return true;
                 else if(Board[Number+j].GetChild(i).GetChild(0).GetComponent<EnemyKnight>())return true;
             }
@@ -94,8 +79,8 @@ public class GameFunction : MonoBehaviour
     public bool krzywyatakWarunek2(int Number,int i, int j)
     {
          if(Number-j>=0 && Board[Number-j].GetChild(i).childCount==1){
-                if( Board[Number-j].GetChild(i).GetChild(0).GetComponent<PlayerKnight>())Die();
-                else if(Board[Number-j].GetChild(i).GetChild(0).GetComponent<EnemyTower>())return true;
+                IsPlayerDie(Board,Number-j,i);
+                if(Board[Number-j].GetChild(i).GetChild(0).GetComponent<EnemyTower>())return true;
                 else if(Board[Number-j].GetChild(i).GetChild(0).GetComponent<EnemyPawn>())return true;
                 else if(Board[Number-j].GetChild(i).GetChild(0).GetComponent<EnemyKnight>())return true;
             }
@@ -155,8 +140,8 @@ public class GameFunction : MonoBehaviour
     {
         //Board.GetComponent<ChessBoardArray>().ChessBoard[i].GetChild(Letter)..localscale=new vector3(.5f,.5f,.5f);
         if(Board[i].GetChild(Letter).childCount==1){
-            if(Board[i].GetChild(Letter).GetChild(0).GetComponent<PlayerKnight>())Die();
-            else if(Board[i].GetChild(Letter).GetChild(0).GetComponent<EnemyBishop>()) return true;
+            IsPlayerDie(Board,i,Letter);
+            if(Board[i].GetChild(Letter).GetChild(0).GetComponent<EnemyBishop>()) return true;
             else if(Board[i].GetChild(Letter).GetChild(0).GetComponent<EnemyPawn>()) return true;
             else if(Board[i].GetChild(Letter).GetChild(0).GetComponent<EnemyKnight>()) return true;
         }
@@ -165,8 +150,8 @@ public class GameFunction : MonoBehaviour
     bool prostyatakwarunek(int Number,int Letter,int i)
     {
             if(Board[Number].GetChild(i).childCount==1){
-                if( Board[Number].GetChild(i).GetChild(0).GetComponent<PlayerKnight>())Die();
-                else if(Board[Number].GetChild(i).GetChild(0).GetComponent<EnemyBishop>())return true;
+                IsPlayerDie(Board,Number,i);
+                if(Board[Number].GetChild(i).GetChild(0).GetComponent<EnemyBishop>())return true;
                 else if(Board[Number].GetChild(i).GetChild(0).GetComponent<EnemyPawn>())return true;
                 else if(Board[Number].GetChild(i).GetChild(0).GetComponent<EnemyKnight>())return true;
             }
