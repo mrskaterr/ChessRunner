@@ -23,7 +23,8 @@ public class SpawnEnemy : MonoBehaviour
                 && Field.GetChild(0).name=="Hetman(Clone)"
                 &&(LastEnemyLetter==Field.GetSiblingIndex() 
                 || LastEnemyLetter==Field.GetSiblingIndex()+1 
-                || LastEnemyLetter==Field.GetSiblingIndex()-1)){
+                || LastEnemyLetter==Field.GetSiblingIndex()-1))
+                {
                     Debug.Log("Double");
                     //Fields.parent.GetComponent<FieldMove>().Speed=0;
                     //Destroy(Field.GetChild(0).gameObject);

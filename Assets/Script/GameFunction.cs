@@ -24,19 +24,17 @@ public class GameFunction : MonoBehaviour
                                     Chessman.parent.transform.position.y,
                                     -1);
     }
-    public void IsPlayerDie(Transform[] ChessBoard,int i,int j){
-        if(ChessBoard[i].GetChild(j).childCount==1
-            &&  ChessBoard[i].GetChild(j).GetChild(0).GetComponent<PlayerKnight>())
-                Die();
-        else
-            {}
-    }
     public Transform IsChessman(Transform[] ChessBoard,int i,int j){
         if(ChessBoard[i].GetChild(j).childCount==1){
             return ChessBoard[i].GetChild(j).GetChild(0);
         }
         return null;
     }
+    public void IsPlayerDie(Transform[] ChessBoard,int i,int j){
+        if(IsChessman(ChessBoard,i,j)?.GetComponent<PlayerKnight>())
+                Die();
+    }
+
     public void PawnAttack(Transform ChessBoard,int Number,int Letter)
     {
         Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
@@ -45,26 +43,28 @@ public class GameFunction : MonoBehaviour
         if((Number-1>=0 && Letter-1>=0))
             IsPlayerDie(Board,Number-1,Letter-1);
     }
+
     public void KnightAttack(Transform ChessBoard,int Number,int Letter)
     {
         Board=ChessBoard.GetComponent<ChessBoardArray>().Board;
         if(Number+1<Board.Length && Letter+2<8)
             IsPlayerDie(Board,Number+1,Letter+2);
-        else if(Number-1>=0 &&Letter+2<8)
-            IsPlayerDie(Board,Number-1,Letter+2);
-        else if(Number+1<Board.Length && Letter-2>=0)
+        if(Number+1<Board.Length && Letter-2>=0)
             IsPlayerDie(Board,Number+1,Letter-2);
-        else if(Number-1>=0 && Letter-2>=0)
+        if(Number-1>=0 && Letter+2<8)
+            IsPlayerDie(Board,Number-1,Letter+2);
+        if(Number-1>=0 && Letter-2>=0)
             IsPlayerDie(Board,Number-1,Letter-2);
-        else if(Number+2<Board.Length && Letter+1<8)
+        if(Number+2<Board.Length && Letter+1<8 )
             IsPlayerDie(Board,Number+2,Letter+1);
-        else if(Number-2>=0 && Letter+1<8)
-            IsPlayerDie(Board,Number-2,Letter+1);
-        else if(Number+2<Board.Length && Letter-1>=0)
+        if(Number+2<Board.Length && Letter-1>=0)
             IsPlayerDie(Board,Number+2,Letter-1);
-        else if(Number-2>=0 && Letter-1>=0)
-            IsPlayerDie(Board,Number-2,Letter-1);    
-        else{} 
+        if(Number-2>=0 && Letter+1<8)
+            IsPlayerDie(Board,Number-2,Letter+1);
+        if(Number-2>=0 && Letter-1>=0)
+            IsPlayerDie(Board,Number-2,Letter-1);
+        
+    
     }
 
     public bool krzywyatakWarunek(int Number,int i, int j)
