@@ -27,16 +27,11 @@ public class ChessBoardArray : GameFunction
                 {
                     Character=Board[i].GetChild(j).GetChild(0);
 
-                    if(Character.GetComponent<EnemyBishop>())
-                        Character.GetComponent<EnemyBishop>().ChangeBishopNumber();
-                    else if(Character.GetComponent<EnemyHetman>())
-                        Character.GetComponent<EnemyHetman>().ChangeHetmanNumber();
-                    else if(Character.GetComponent<EnemyTower>())
-                        Character.GetComponent<EnemyTower>().ChangeTowerNumber();
-                    else if(Character.GetComponent<EnemyPawn>())
-                        Character.GetComponent<EnemyPawn>().ChangePawnNumber();
-                    else if(Character.GetComponent<EnemyKnight>())
-                        Character.GetComponent<EnemyKnight>().ChangeKnightNumber();
+                    Character.GetComponent<EnemyBishop>()?.ChangeBishopNumber();
+                    Character.GetComponent<EnemyHetman>()?.ChangeHetmanNumber();
+                    Character.GetComponent<EnemyTower>()?.ChangeTowerNumber();
+                    Character.GetComponent<EnemyPawn>()?.ChangePawnNumber();
+                    Character.GetComponent<EnemyKnight>()?.ChangeKnightNumber();
                 }
                 
                 
