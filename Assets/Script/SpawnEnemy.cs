@@ -1,83 +1,69 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class SpawnEnemy : MonoBehaviour
 {
-    string LastEnemyName;
-    Transform LastEnemyTransform;
-    int LastEnemyLetter;
+    int LastHetmanDistance=8;
+    int LastTowerDistance=8;
+    int LastBishopDistance=8;
+    int LastKnightDistance=8;
+    int LastPawnDistance=8;
+    int RND;
     public Transform[] Enemy;
     void Update(){
         if(Input.GetKeyDown(KeyCode.Space))GetComponent<FieldMove>().Speed=100;
     }
-    public void Spawn(Transform Fields){
+    public void Spawn(Transform Fields)
+    {
         Transform Field;
         //Random.Range(0,3)==0
-        if(true){
-            while(true){
-                Field=Fields.GetChild(Random.Range(0,Fields.childCount));
-                Instantiate(Enemy[Random.Range(0,Enemy.Length)], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
-                if(LastEnemyName=="Hetman(Clone)" 
-                && Field.GetChild(0).name=="Hetman(Clone)"
-                &&(LastEnemyLetter==Field.GetSiblingIndex() 
-                || LastEnemyLetter==Field.GetSiblingIndex()+1 
-                || LastEnemyLetter==Field.GetSiblingIndex()-1))
-                {
-                    Debug.Log("Double");
-                    //Fields.parent.GetComponent<FieldMove>().Speed=0;
-                    //Destroy(Field.GetChild(0).gameObject);
-                    
-                    break;
-                }
-                    
-                else if(LastEnemyName=="Tower(Clone)" 
-                && Field.GetChild(0).name=="Tower(Clone)" 
-                && LastEnemyLetter==Field.GetSiblingIndex()){
-                    Debug.Log("Double");
-                    //Fields.parent.GetComponent<FieldMove>().Speed=0;
-
-                   //Destroy(Field.GetChild(0).gameObject);
-                    
-                    break;
-                }
-                else if(LastEnemyName=="Tower(Clone)" 
-                && Field.GetChild(0).name=="Hetman(Clone)" 
-                && LastEnemyLetter==Field.GetSiblingIndex()){
-                    Debug.Log("Double");
-                    //Fields.parent.GetComponent<FieldMove>().Speed=0;
-                    
-                    //Destroy(Field.GetChild(0).gameObject);
-                    
-                    break;
-                }
-                else if(LastEnemyName=="Hetman(Clone)" 
-                && Field.GetChild(0).name=="Tower(Clone)" 
-                && LastEnemyLetter==Field.GetSiblingIndex()){
-                    Debug.Log("Double");
-                    //Fields.parent.GetComponent<FieldMove>().Speed=0;
-                    
-                    //Destroy(Field.GetChild(0).gameObject);
-                    
-                    break;
-                }
-                // //
-                
-                else{
-                    LastEnemyLetter=Field.GetSiblingIndex();
-                    LastEnemyName=Field.GetChild(0).name;
-                    LastEnemyTransform=Field.GetChild(0);
-
-                    break;
-                }
+        Field=Fields.GetChild(Random.Range(0,Fields.childCount));
+        while(true)
+        {
+            RND=Random.Range(0,Enemy.Length);
+            if(RND==0 && LastHetmanDistance>=8)
+            {
+                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+                LastHetmanDistance=0;
+                break;
             }
-            if((LastEnemyName=="Hetman(Clone)" || LastEnemyName=="Tower(Clone)") 
-            && (Field.GetChild(0).name=="Hetman(Clone)"  || Field.GetChild(0).name=="Tower(Clone)" ))
-                Field.GetChild(0).GetComponent<BlockedCrossing>().enabled=true;
+            else if(RND>0 && RND<3 && LastTowerDistance>=8)
+            {
+                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+                LastTowerDistance=0;
+                break;
+            }
+            else if(RND>2 && RND<5 && LastBishopDistance>=8)
+            {
+                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+                LastBishopDistance=0;
+                break;
+            }
+            else if(RND>5 && RND<7 && LastKnightDistance>=8)
+            {
+                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+                LastKnightDistance=0;
+                break;
+            }
+            else if(RND>6 && RND<15)
+            {
+                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+                LastPawnDistance=0;
+                break;
+            }
+            else{
+                Debug.Log("blad");
+                Debug.Log(RND);
+                break;
+            }
         }
-        // else{
-        //     LastEnemyName="";
-        // }
+
+        LastHetmanDistance++;
+        LastTowerDistance++;
+        LastBishopDistance++;
+        LastKnightDistance++;
+        LastPawnDistance++;
     }
 }
