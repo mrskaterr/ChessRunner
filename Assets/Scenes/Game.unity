@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Abcdefgh: {fileID: 1641575468}
   ScoreTxt: {fileID: 1479561073}
-  Speed: 20
+  Speed: 1
 --- !u!114 &252067504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,21 +1863,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0846ed421afb34eaa85bf9df5a378a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HetmanMinDistance: 8
+  TowerMinDistance: 8
+  BishopMinDistance: 8
+  KnightMinDistance: 8
   Enemy:
   - {fileID: 6528210521414831787, guid: 37e1f1ae7b0580a44874732ab8812603, type: 3}
   - {fileID: 2368008771020921949, guid: 7b7b9cf2bffbf7f43880d502696392b1, type: 3}
-  - {fileID: 2368008771020921949, guid: 7b7b9cf2bffbf7f43880d502696392b1, type: 3}
-  - {fileID: 4977864484618834411, guid: 3d085cee9e2e24b4b87357649260f813, type: 3}
   - {fileID: 4977864484618834411, guid: 3d085cee9e2e24b4b87357649260f813, type: 3}
   - {fileID: 5568198257801314457, guid: 2981b47c2199aec45bb18ada7b3963c2, type: 3}
-  - {fileID: 5568198257801314457, guid: 2981b47c2199aec45bb18ada7b3963c2, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
-  - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
   - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
 --- !u!114 &252067505
 MonoBehaviour:

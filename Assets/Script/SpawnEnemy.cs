@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    int LastHetmanDistance=8;
-    int LastTowerDistance=8;
-    int LastBishopDistance=8;
-    int LastKnightDistance=8;
-    int LastPawnDistance=8;
+    public int HetmanMinDistance;
+    public int TowerMinDistance;
+    public int BishopMinDistance;
+    public int KnightMinDistance;
+    int LastHetmanDistance;
+    int LastTowerDistance;
+    int LastBishopDistance;
+    int LastKnightDistance;
     int RND;
     public Transform[] Enemy;
-    void Update(){
-        if(Input.GetKeyDown(KeyCode.Space))GetComponent<FieldMove>().Speed=100;
+    void Start()
+    {
+        LastHetmanDistance=HetmanMinDistance;
+        LastTowerDistance=TowerMinDistance;
+        LastBishopDistance=BishopMinDistance;
+        LastKnightDistance=KnightMinDistance;
     }
     public void Spawn(Transform Fields)
     {
@@ -23,47 +30,57 @@ public class SpawnEnemy : MonoBehaviour
         while(true)
         {
             RND=Random.Range(0,Enemy.Length);
-            if(RND==0 && LastHetmanDistance>=8)
+            if(RND==0 && LastHetmanDistance>=HetmanMinDistance && LastTowerDistance>1)
             {
                 Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
                 LastHetmanDistance=0;
                 break;
             }
-            else if(RND>0 && RND<3 && LastTowerDistance>=8)
+            else if(/*RND>0 && RND<3*/ RND==1 && LastTowerDistance>=TowerMinDistance && LastHetmanDistance>1)
             {
                 Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
                 LastTowerDistance=0;
                 break;
             }
-            else if(RND>2 && RND<5 && LastBishopDistance>=8)
+            else if(RND==2 && LastBishopDistance>=BishopMinDistance)
             {
                 Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
                 LastBishopDistance=0;
                 break;
             }
-            else if(RND>5 && RND<7 && LastKnightDistance>=8)
+            else if(RND==3 && LastKnightDistance>=KnightMinDistance)
             {
                 Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
                 LastKnightDistance=0;
                 break;
             }
-            else if(RND>6 && RND<15)
+            else if(RND==4)
             {
                 Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
-                LastPawnDistance=0;
                 break;
             }
-            else{
-                Debug.Log("blad");
-                Debug.Log(RND);
+            else
+            {
                 break;
             }
-        }
+        //     
 
+        //     else if(RND>6 && RND<15)
+        //     {
+        //         Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,-1),Field.rotation).SetParent(Field);
+        //         LastPawnDistance=0;
+        //         break;
+        //     }
+        //     else{
+        //         Debug.Log("blad");
+        //         Debug.Log(RND);
+        //         break;
+        //     }
+        // }
+        }
         LastHetmanDistance++;
         LastTowerDistance++;
         LastBishopDistance++;
         LastKnightDistance++;
-        LastPawnDistance++;
     }
 }
