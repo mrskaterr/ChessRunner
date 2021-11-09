@@ -1785,7 +1785,6 @@ GameObject:
   - component: {fileID: 252067503}
   - component: {fileID: 252067501}
   - component: {fileID: 252067504}
-  - component: {fileID: 252067505}
   m_Layer: 0
   m_Name: Chessboard
   m_TagString: Untagged
@@ -1873,19 +1872,6 @@ MonoBehaviour:
   - {fileID: 4977864484618834411, guid: 3d085cee9e2e24b4b87357649260f813, type: 3}
   - {fileID: 5568198257801314457, guid: 2981b47c2199aec45bb18ada7b3963c2, type: 3}
   - {fileID: 495278720184849638, guid: 1614f565563f83540bffa3db5eb91e60, type: 3}
---- !u!114 &252067505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252067500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b861dbe35c4174baafddc79a4d0109, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Board: []
 --- !u!1 &254062685
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5479,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737038441}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &738505083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738505084}
+  m_Layer: 0
+  m_Name: BlackLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &738505084
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738505083}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.49, y: 9.5, z: -1.8733611}
+  m_LocalScale: {x: 10.28, y: 0.32238, z: 1}
+  m_Children:
+  - {fileID: 1009585399}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759539027
 GameObject:
   m_ObjectHideFlags: 0
@@ -6054,7 +6071,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809309068}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 9.15, y: 9.7, z: -20.32}
+  m_LocalPosition: {x: 9.15, y: 20.86, z: -20.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7309,11 +7326,11 @@ GameObject:
   - component: {fileID: 1009585398}
   - component: {fileID: 1009585397}
   m_Layer: 0
-  m_Name: RedLine
+  m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &1009585397
 MeshRenderer:
@@ -7372,12 +7389,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009585395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.38, y: 9.5, z: -1.8733611}
-  m_LocalScale: {x: 10.28, y: 0.16032, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2.393518, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 738505084}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1024516010
 GameObject:
@@ -15448,6 +15465,18 @@ PrefabInstance:
     - target: {fileID: 5750997408595403001, guid: ea3821b15fc4a6e47a0ded08468bebba, type: 3}
       propertyPath: m_Name
       value: Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750997408595403006, guid: ea3821b15fc4a6e47a0ded08468bebba, type: 3}
+      propertyPath: m_Size.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750997408595403006, guid: ea3821b15fc4a6e47a0ded08468bebba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 86c9c5b2387c8a94ca0aa8a5d744e13d, type: 3}
+    - target: {fileID: 5750997408595403006, guid: ea3821b15fc4a6e47a0ded08468bebba, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea3821b15fc4a6e47a0ded08468bebba, type: 3}

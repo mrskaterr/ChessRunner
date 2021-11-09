@@ -21,7 +21,7 @@ public class FieldMove : MonoBehaviour
         ScoreTxt.GetComponent<Text>().text=HowMany.ToString();
         if(Abcdefgh){
             if(Abcdefgh.transform.position.y<=-2){
-                Destroy(Abcdefgh);
+                Abcdefgh.gameObject.SetActive(false);
             }
             else
             {

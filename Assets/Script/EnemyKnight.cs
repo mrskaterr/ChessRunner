@@ -5,11 +5,13 @@ using UnityEngine;
 public class EnemyKnight : GameFunction
 {
     // Start is called before the first frame update
+    Sprite BlackSprite;
     Transform ChessBoard;
     int KnightLetter;
     int KnightNumber;
     void Start()
     {
+        BlackSprite=Resources.Load<Sprite>("Sprite/BlackKnight");
         ChessBoard=transform.parent.parent.parent;
         KnightLetter=transform.parent.GetSiblingIndex();
         KnightNumber=transform.parent.parent.parent.childCount-1;
@@ -18,7 +20,11 @@ public class EnemyKnight : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(RedLine(transform)){
+        if(BlackLine(transform))
+        {
+            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
+                GetComponent<SpriteRenderer>().sprite=BlackSprite;
+
             KnightAttack(ChessBoard,KnightNumber,KnightLetter);
         }
     }

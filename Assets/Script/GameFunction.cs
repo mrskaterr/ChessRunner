@@ -12,9 +12,9 @@ public class GameFunction : MonoBehaviour
         //SceneManager.LoadScene("Game");
         Debug.Log("YOU DIE");
     }
-    public bool RedLine(Transform Chessman)
+    public bool BlackLine(Transform Chessman,double y=9.5f)
     {
-        if(Chessman.position.y<=9.5f)
+        if(Chessman.position.y<=y)
             return true;
         return false;
     }
@@ -63,8 +63,6 @@ public class GameFunction : MonoBehaviour
             IsPlayerDie(Board,Number-2,Letter+1);
         if(Number-2>=0 && Letter-1>=0)
             IsPlayerDie(Board,Number-2,Letter-1);
-        
-    
     }
 
     public bool krzywyatakWarunek(int Number,int i, int j)

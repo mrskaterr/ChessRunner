@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EnemyTower : GameFunction
 {
-    // Start is called before the first frame update
+    Sprite BlackSprite;
     Transform ChessBoard;
     int TowerLetter;
     int TowerNumber;
     void Start()
     {
+        BlackSprite=Resources.Load<Sprite>("Sprite/BlackTower");
         ChessBoard=transform.parent.parent.parent;
         TowerLetter=transform.parent.GetSiblingIndex();
         TowerNumber=transform.parent.parent.parent.childCount-1;
@@ -19,7 +20,11 @@ public class EnemyTower : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(RedLine(transform)){
+        if(BlackLine(transform))
+        {
+            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
+                GetComponent<SpriteRenderer>().sprite=BlackSprite;
+
             prostyatak(ChessBoard,TowerNumber,TowerLetter);
         }
     }

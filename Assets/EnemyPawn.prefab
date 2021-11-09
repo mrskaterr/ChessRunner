@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4895079538722492356}
   - component: {fileID: 981854784130163112}
   m_Layer: 0
-  m_Name: Pawn
+  m_Name: EnemyPawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a011dbd53767cf94bb8fcc4e8f492bf8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 431f1322f2d02dd49a21c918f9bcf87d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

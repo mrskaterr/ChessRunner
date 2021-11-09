@@ -13,9 +13,6 @@ public class BlockedCrossing : GameFunction
         ChessmanLetter=transform.parent.GetSiblingIndex();
         ChessmanNumber=transform.parent.parent.parent.childCount-1;
     }
-    // Start is called before the first frame update
-
-    // Update is called once per frame
     void Update()
     {
             if(krzywyatakWarunek3(ChessmanNumber,ChessmanLetter)){

@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class EnemyHetman : GameFunction
 {
     Transform ChessBoard;
+    Sprite BlackSprite;
     int HetmanLetter;
     int HetmanNumber;
     // Start is called before the first frame update
     void Start()
     {
+        BlackSprite=Resources.Load<Sprite>("Sprite/BlackHetman");
         ChessBoard=transform.parent.parent.parent;
         HetmanLetter=transform.parent.GetSiblingIndex();
         HetmanNumber=transform.parent.parent.parent.childCount-1;
@@ -20,7 +22,11 @@ public class EnemyHetman : GameFunction
     void Update()
     {
         AutoPosition(transform);
-        if(RedLine(transform)){
+        if(BlackLine(transform))
+        {
+            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
+                GetComponent<SpriteRenderer>().sprite=BlackSprite;
+
             prostyatak(ChessBoard,HetmanNumber,HetmanLetter);
             krzywyatak(ChessBoard,HetmanNumber,HetmanLetter);
         }
