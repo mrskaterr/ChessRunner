@@ -1,21 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
 public class Mouse : MonoBehaviour
 {
-  Transform Knight;
+  [SerializeField] Transform Knight;
   int KnightNumber;
   int ClickedNumber;
   int KnightLetter;
   int ClickedLetter;
-
-  // Start is called before the first frame update
-  void Awake()
-  {
-    Knight=gameObject.transform.parent.parent.GetChild(0).GetChild(0).GetChild(0).transform;
-  }
   void OnMouseDown()
   {
     KnightNumber=int.Parse(Knight.parent.parent.name);
