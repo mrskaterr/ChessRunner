@@ -49,6 +49,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
      <Compile Include="Assets\Script\SpawnEnemy.cs" />
      <Compile Include="Assets\Script\EnemyTower.cs" />
+     <Compile Include="Assets\Script\MainMenu.cs" />
      <Compile Include="Assets\Script\EnemyBishop.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
      <Compile Include="Assets\Script\GameFunction.cs" />

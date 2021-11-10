@@ -8,7 +8,7 @@ public class PlayerKnight : GameFunction
 {
     Transform Knight;
     
-    void Start()
+    void Awake()
     {
         Knight=transform;
     }

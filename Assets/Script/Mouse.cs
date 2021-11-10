@@ -8,11 +8,11 @@ public class Mouse : MonoBehaviour
   Transform Knight;
   int KnightNumber;
   int ClickedNumber;
-  char KnightLetter;
-  char ClickedLetter;
+  int KnightLetter;
+  int ClickedLetter;
 
   // Start is called before the first frame update
-  void Start()
+  void Awake()
   {
     Knight=gameObject.transform.parent.parent.GetChild(0).GetChild(0).GetChild(0).transform;
   }
@@ -20,8 +20,8 @@ public class Mouse : MonoBehaviour
   {
     KnightNumber=int.Parse(Knight.parent.parent.name);
     ClickedNumber=int.Parse(this.gameObject.transform.parent.name);
-    KnightLetter=Knight.parent.name[0];
-    ClickedLetter=this.gameObject.name[0];
+    KnightLetter=Knight.parent.GetSiblingIndex();
+    ClickedLetter=this.gameObject.transform.GetSiblingIndex();
     if(this.gameObject.transform.position.y<9.5f){
       if((KnightNumber+1==ClickedNumber || KnightNumber-1==ClickedNumber) 
       && (KnightLetter+2==ClickedLetter || KnightLetter-2==ClickedLetter))
