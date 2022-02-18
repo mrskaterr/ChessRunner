@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChessBoardArray : GameFunction
 {
     Transform Character;
-    // Start is called before the first frame update
     void Start()
     {
         Board=new Transform[transform.childCount];
@@ -32,9 +31,7 @@ public class ChessBoardArray : GameFunction
                     Character.GetComponent<EnemyTower>()?.ChangeTowerNumber();
                     Character.GetComponent<EnemyPawn>()?.ChangePawnNumber();
                     Character.GetComponent<EnemyKnight>()?.ChangeKnightNumber();
-                }
-                
-                
+                } 
             }
         }
     }

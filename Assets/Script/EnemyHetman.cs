@@ -9,7 +9,6 @@ public class EnemyHetman : GameFunction
     Sprite BlackSprite;
     int HetmanLetter;
     int HetmanNumber;
-    // Start is called before the first frame update
     void Start()
     {
         BlackSprite=Resources.Load<Sprite>("Sprite/BlackHetman");
@@ -17,23 +16,18 @@ public class EnemyHetman : GameFunction
         HetmanLetter=transform.parent.GetSiblingIndex();
         HetmanNumber=transform.parent.parent.parent.childCount-1;
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
-                GetComponent<SpriteRenderer>().sprite=BlackSprite;
-
-            prostyatak(ChessBoard,HetmanNumber,HetmanLetter);
-            krzywyatak(ChessBoard,HetmanNumber,HetmanLetter);
+            ChangeToBlack(gameObject,BlackSprite);
+            prostyatak(ChessBoard,HetmanNumber,HetmanLetter,gameObject);
+            krzywyatak(ChessBoard,HetmanNumber,HetmanLetter,gameObject);
         }
-        
-        
     }
-    public void ChangeHetmanNumber(){
+    public void ChangeHetmanNumber()
+    {
         --HetmanNumber;
     }
 }

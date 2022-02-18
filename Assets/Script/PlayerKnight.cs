@@ -12,16 +12,12 @@ public class PlayerKnight : GameFunction
     {
         Knight=transform;
     }
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(Knight);
-        if(Knight.position.y<=-1)Die();
         if(Knight.parent.childCount>0)
             for(int i=0;i<Knight.parent.childCount;i++)
-            {
                 if(Knight.parent.GetChild(i).transform!=Knight)
                     Destroy(Knight.parent.GetChild(i).gameObject);
-            }
-        
     }
 }

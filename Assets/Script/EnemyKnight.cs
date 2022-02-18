@@ -16,19 +16,17 @@ public class EnemyKnight : GameFunction
         KnightLetter=transform.parent.GetSiblingIndex();
         KnightNumber=transform.parent.parent.parent.childCount-1;
     }
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
-                GetComponent<SpriteRenderer>().sprite=BlackSprite;
-
-            KnightAttack(ChessBoard,KnightNumber,KnightLetter);
+            ChangeToBlack(gameObject,BlackSprite);
+            KnightAttack(ChessBoard,KnightNumber,KnightLetter,gameObject);
         }
     }
-    public void ChangeKnightNumber(){
+    public void ChangeKnightNumber()
+    {
         --KnightNumber;
     }
 }

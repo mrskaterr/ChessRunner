@@ -10,7 +10,6 @@ public class EnemyBishop : GameFunction
     Transform Parent;
     int BishopLetter;
     int BishopNumber;
-    // Start is called before the first frame update
     void Start()
     {
         BlackSprite = Resources.Load<Sprite>("Sprite/BlackBishop");
@@ -18,19 +17,17 @@ public class EnemyBishop : GameFunction
         BishopLetter=transform.parent.GetSiblingIndex();
         BishopNumber=transform.parent.parent.parent.childCount-1;
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
-                GetComponent<SpriteRenderer>().sprite=BlackSprite;
-            krzywyatak(ChessBoard,BishopNumber,BishopLetter);
+            ChangeToBlack(gameObject,BlackSprite);
+            krzywyatak(ChessBoard,BishopNumber,BishopLetter,gameObject);
         }
     }
-    public void ChangeBishopNumber(){
+    public void ChangeBishopNumber()
+    {
         --BishopNumber;
     }
 }

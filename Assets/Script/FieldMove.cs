@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FieldMove : MonoBehaviour
 {
-    
     Transform Fields;
     private const float StartSpeed=0.001f;
     private int StartHowMany;
@@ -13,17 +13,15 @@ public class FieldMove : MonoBehaviour
     public GameObject ScoreTxt;
     int HowMany;
     public float Speed;
-
-    
     void Start()
     {
         StartHowMany=transform.childCount;
         HowMany=StartHowMany;
         ScoreTxt.GetComponent<Text>().text=(HowMany-StartHowMany).ToString();
     }
-    void Update()
+    void FixedUpdate()
     {
-        if(Abcdefgh){
+        if(Abcdefgh.activeSelf){
             if(Abcdefgh.transform.position.y<=-2){
                 Abcdefgh.gameObject.SetActive(false);
             }
@@ -42,6 +40,9 @@ public class FieldMove : MonoBehaviour
                 for(int j=0;j<Fields.childCount;j++){
                     if(Fields.GetChild(j).childCount==1)//if chessman on field 
                     {
+                        if(Fields.GetChild(j).GetChild(0).gameObject.GetComponent<PlayerKnight>())
+                            SceneManager.LoadScene("Game");
+
                         Destroy(Fields.GetChild(j).GetChild(0).gameObject);
                     }
                 }

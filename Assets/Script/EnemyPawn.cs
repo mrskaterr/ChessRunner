@@ -15,20 +15,18 @@ public class EnemyPawn : GameFunction
         PawnLetter=transform.parent.GetSiblingIndex();
         PawnNumber=transform.parent.parent.parent.childCount-1;
     }
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            PawnAttack(ChessBoard,PawnNumber,PawnLetter);
-            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
-                GetComponent<SpriteRenderer>().sprite=BlackSprite;
+            ChangeToBlack(gameObject,BlackSprite);
+            PawnAttack(ChessBoard,PawnNumber,PawnLetter,gameObject);
         }
 
     }
-    public void ChangePawnNumber(){
+    public void ChangePawnNumber()
+    {
         --PawnNumber;
     }
 }

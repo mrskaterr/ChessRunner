@@ -17,18 +17,17 @@ public class EnemyTower : GameFunction
         TowerNumber=transform.parent.parent.parent.childCount-1;
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            if(GetComponent<SpriteRenderer>().sprite!=BlackSprite)
-                GetComponent<SpriteRenderer>().sprite=BlackSprite;
-
-            prostyatak(ChessBoard,TowerNumber,TowerLetter);
+            prostyatak(ChessBoard,TowerNumber,TowerLetter,gameObject);
+            ChangeToBlack(gameObject,BlackSprite);
         }
     }
-    public void ChangeTowerNumber(){
+    public void ChangeTowerNumber()
+    {
         --TowerNumber;
     }
 
