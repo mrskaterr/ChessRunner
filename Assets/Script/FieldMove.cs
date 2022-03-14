@@ -21,8 +21,10 @@ public class FieldMove : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //StartCoroutine(Wait(1));
         if(Abcdefgh.activeSelf){
-            if(Abcdefgh.transform.position.y<=-2){
+            if(Abcdefgh.transform.position.y<=-2)
+            {
                 Abcdefgh.gameObject.SetActive(false);
             }
             else
@@ -34,7 +36,7 @@ public class FieldMove : MonoBehaviour
         }
         for(int i=0;i<transform.childCount;i++){
             Fields=gameObject.transform.GetChild(i);
-            Fields.position=new Vector3(Fields.position.x,Fields.position.y-StartSpeed*Speed,Fields.position.z);
+            
             if(Fields.position.y<=-1){
                 GetComponent<ChessBoardArray>().UpdateArray();
                 for(int j=0;j<Fields.childCount;j++){
@@ -49,13 +51,20 @@ public class FieldMove : MonoBehaviour
                 Fields.position=new Vector3(Fields.position.x,transform.childCount-1,Fields.position.z);
                 GetComponent<SpawnEnemy>().Spawn(Fields);
                 ++HowMany;
-                if(HowMany%10==0){
+                if(HowMany%10==0)
+                {
                     ++Speed;
                 }
                 Fields.name=HowMany.ToString();
                 ScoreTxt.GetComponent<Text>().text=(HowMany-StartHowMany).ToString();
             }
-
+            Fields.position=new Vector3(Fields.position.x,Fields.position.y-StartSpeed*Speed,Fields.position.z);
         }
+    }
+    IEnumerator Wait(float second)
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        ////
+        
     }
 }

@@ -19,7 +19,7 @@ public class GameFunction : MonoBehaviour
     {
         if(Chessman.GetComponent<SpriteRenderer>().sprite!=BlackSprite)
             Chessman.GetComponent<SpriteRenderer>().sprite=BlackSprite;
-    }  
+    }
     public bool BlackLine(Transform Chessman,double y=9.5f)
     {
         if(Chessman.position.y<=y)
