@@ -11,10 +11,12 @@ public class FieldMove : MonoBehaviour
     private int StartHowMany;
     public GameObject Abcdefgh;
     public GameObject ScoreTxt;
+    private Transform Last;
     int HowMany;
     public float Speed;
     void Start()
     {
+        Last=transform.GetChild(transform.childCount-1);
         StartHowMany=transform.childCount;
         HowMany=StartHowMany;
         ScoreTxt.GetComponent<Text>().text=(HowMany-StartHowMany).ToString();
@@ -36,7 +38,7 @@ public class FieldMove : MonoBehaviour
         }
         for(int i=0;i<transform.childCount;i++){
             Fields=gameObject.transform.GetChild(i);
-            
+            Fields.position=new Vector3(Fields.position.x,Fields.position.y-StartSpeed*Speed,Fields.position.z);
             if(Fields.position.y<=-1){
                 GetComponent<ChessBoardArray>().UpdateArray();
                 for(int j=0;j<Fields.childCount;j++){
@@ -48,17 +50,23 @@ public class FieldMove : MonoBehaviour
                         Destroy(Fields.GetChild(j).GetChild(0).gameObject);
                     }
                 }
-                Fields.position=new Vector3(Fields.position.x,transform.childCount-1,Fields.position.z);
+                Fields.position=new Vector3(Fields.position.x,Last.position.y+1f,Fields.position.z); 
+
+                Last=Fields;
                 GetComponent<SpawnEnemy>().Spawn(Fields);
                 ++HowMany;
                 if(HowMany%10==0)
                 {
                     ++Speed;
                 }
+                if(((HowMany-StartHowMany-1)%16==0) || HowMany-StartHowMany-1==0)
+                {
+                    Fields.position-=new Vector3(0,StartSpeed*Speed,0);
+                }
                 Fields.name=HowMany.ToString();
                 ScoreTxt.GetComponent<Text>().text=(HowMany-StartHowMany).ToString();
             }
-            Fields.position=new Vector3(Fields.position.x,Fields.position.y-StartSpeed*Speed,Fields.position.z);
+            //Fields.position=new Vector3(Fields.position.x,Fields.position.y-StartSpeed*Speed,Fields.position.z);
         }
     }
     IEnumerator Wait(float second)
