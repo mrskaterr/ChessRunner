@@ -45,6 +45,7 @@ public class GameFunction : MonoBehaviour
         {
             ChessBoard[0].parent.gameObject.GetComponent<FieldMove>().Speed=0;
             THIS.GetComponent<SpriteRenderer>().color=Color.red;
+            THIS.transform.position-=new Vector3(0,0,1);
             Die();
             return true;
         }
