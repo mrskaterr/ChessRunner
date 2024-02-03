@@ -26,56 +26,43 @@ public class SpawnEnemy : MonoBehaviour
     public void Spawn(Transform Fields)
     {
         Transform Field;
-        //Random.Range(0,3)==0
         Field=Fields.GetChild(Random.Range(0,Fields.childCount));
         while(true)
         {
             RND=Random.Range(0,Enemy.Length);
-            if(RND==0 && LastHetmanDistance>=HetmanMinDistance && LastTowerDistance>1)
-            {
-                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-                LastHetmanDistance=0;
+
+            if (Enemy[RND].gameObject.activeSelf)
                 break;
-            }
-            else if(/*RND>0 && RND<3*/ RND==1 && LastTowerDistance>=TowerMinDistance && LastHetmanDistance>1)
+            if(Enemy[RND].GetComponent<EnemyHetman>() && LastHetmanDistance>=HetmanMinDistance && LastTowerDistance>1)
             {
-                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-                LastTowerDistance=0;
-                break;
+                Enemy[RND].SetParent(Field);
+                Enemy[RND].gameObject.SetActive(true);
+                LastHetmanDistance = 0;
             }
-            else if(RND==2 && LastBishopDistance>=BishopMinDistance)
+            if(Enemy[RND].GetComponent<EnemyTower>() && LastTowerDistance>=TowerMinDistance && LastHetmanDistance>1)
             {
-                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-                LastBishopDistance=0;
-                break;
+                Enemy[RND].SetParent(Field);
+                Enemy[RND].gameObject.SetActive(true);
+                LastTowerDistance = 0;
             }
-            else if(RND==3 && LastKnightDistance>=KnightMinDistance)
+            if(Enemy[RND].GetComponent<EnemyBishop>() && LastBishopDistance>=BishopMinDistance)
             {
-                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-                LastKnightDistance=0;
-                break;
+                Enemy[RND].SetParent(Field);
+                Enemy[RND].gameObject.SetActive(true);
+                LastBishopDistance = 0;
             }
-            else if(RND==4)
+            if(Enemy[RND].GetComponent<EnemyKnight>() && LastKnightDistance>=KnightMinDistance)
             {
-                Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-                break;
+                Enemy[RND].SetParent(Field);
+                Enemy[RND].gameObject.SetActive(true);
+                LastKnightDistance =  0;
             }
-            else
+            if(Enemy[RND].GetComponent<EnemyPawn>())
             {
-                break;
+                Enemy[RND].SetParent(Field);
+                Enemy[RND].gameObject.SetActive(true);
             }
-        //     else if(RND>6 && RND<15)
-        //     {
-        //         Instantiate(Enemy[RND], new Vector3(Field.position.x,Field.position.y,SpawnZ),Field.rotation).SetParent(Field);
-        //         LastPawnDistance=0;
-        //         break;
-        //     }
-        //     else{
-        //         Debug.Log("blad");
-        //         Debug.Log(RND);
-        //         break;
-        //     }
-        // }
+            break;
         }
         LastHetmanDistance++;
         LastTowerDistance++;

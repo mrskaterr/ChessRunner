@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class EnumHelp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Transform oldParent;
+   void Start()
+    {
+        oldParent = transform.parent;
+    }
     public enum Character{
         Pawn,
         Knight,
@@ -13,4 +17,9 @@ public class EnumHelp : MonoBehaviour
         Hetman
     }
     public Character character;
+    void OnDisable()
+    {
+        transform.SetParent(oldParent);
+    }
 }
+

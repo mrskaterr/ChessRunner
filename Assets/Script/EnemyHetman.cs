@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHetman : GameFunction
 {
+
     Transform ChessBoard;
     Sprite BlackSprite;
     int HetmanLetter;

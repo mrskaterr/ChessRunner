@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class PlayerKnight : GameFunction
 {
     Transform Knight;
+    [SerializeField] GameObject kiledTxt;
+    int killed;
+
     
     void Awake()
     {
-        Knight=transform;
+        killed = 0;
+        Knight =transform;
     }
     void FixedUpdate()
     {
@@ -18,6 +24,10 @@ public class PlayerKnight : GameFunction
         if(Knight.parent.childCount>0)
             for(int i=0;i<Knight.parent.childCount;i++)
                 if(Knight.parent.GetChild(i).transform!=Knight)
-                    Destroy(Knight.parent.GetChild(i).gameObject);
+                {
+                    Knight.parent.GetChild(i).gameObject.SetActive(false);
+                    killed++;
+                    kiledTxt.GetComponent<Text>().text = killed.ToString();
+                }
     }
 }
