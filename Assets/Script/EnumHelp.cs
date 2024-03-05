@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnumHelp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Sprite [] Pawns;
     public enum Character{
         Pawn,
         Knight,
@@ -13,4 +13,12 @@ public class EnumHelp : MonoBehaviour
         Hetman
     }
     public Character character;
+    private void Start()
+    {
+        if (GetComponent<Player>())
+        {
+            character = (Character)PlayerPrefs.GetInt("Player");
+            GetComponent<SpriteRenderer>().sprite = Pawns[(int)character];
+        }
+    }
 }

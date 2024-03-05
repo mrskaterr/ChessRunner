@@ -42,7 +42,7 @@ public class FieldMove : MonoBehaviour
                 {
                     if(Row.GetChild(j).childCount==1)
                     {
-                        if(Row.GetChild(j).GetChild(0).gameObject.GetComponent<PlayerKnight>())
+                        if(Row.GetChild(j).GetChild(0).gameObject.GetComponent<Player>())
                             SceneManager.LoadScene("Game");
 
                         Destroy(Row.GetChild(j).GetChild(0).gameObject);

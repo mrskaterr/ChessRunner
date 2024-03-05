@@ -41,7 +41,7 @@ public class GameFunction : MonoBehaviour
     }
     public bool IsPlayerDie(Transform[] ChessBoard,int i,int j,GameObject THIS)
     {
-        if(IsChessman(ChessBoard,i,j)?.GetComponent<PlayerKnight>())
+        if(IsChessman(ChessBoard,i,j)?.GetComponent<Player>())
         {
             ChessBoard[0].parent.gameObject.GetComponent<FieldMove>().Speed=0;
             THIS.GetComponent<SpriteRenderer>().color=Color.red;
