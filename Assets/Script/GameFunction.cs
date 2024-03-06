@@ -4,16 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameFunction : MonoBehaviour
 {
+    
     [HideInInspector]public Transform[] Board;
-    public void Die()
+    [SerializeField] GameObject DieScreen;
+    bool PlayerDead = false;
+    public void Die(Transform player)
     {
-        Debug.Log("YOU DIE");
-        StartCoroutine(Wait(5.0f));
+        if (!PlayerDead)
+        {
+            PlayerDead = true;
+            Debug.Log("YOU DIE");
+            StartCoroutine(Wait(2.0f, player));
+        }
     }
-    IEnumerator Wait(float waitTime)
+    IEnumerator Wait(float waitTime, Transform player)
     {
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("Game");
+        player.GetComponent<Player>().DeadScreen();
+        //SceneManager.LoadScene("Game");
     }
     public void ChangeToBlack(GameObject Chessman,Sprite BlackSprite)
     {
@@ -46,7 +54,8 @@ public class GameFunction : MonoBehaviour
             ChessBoard[0].parent.gameObject.GetComponent<FieldMove>().Speed=0;
             THIS.GetComponent<SpriteRenderer>().color=Color.red;
             THIS.transform.position-=new Vector3(0,0,1);
-            Die();
+
+            Die(IsChessman(ChessBoard, i, j));
             return true;
         }
         return false;

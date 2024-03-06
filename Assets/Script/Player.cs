@@ -10,6 +10,7 @@ public class Player : GameFunction
 {
     [SerializeField] Sprite[] Pawns;
     [SerializeField] Transform[] FirstFields;
+    [SerializeField] GameObject deadScreen;
     static Enum.Character character;
     void Awake()
     {
@@ -31,5 +32,12 @@ public class Player : GameFunction
             for(int i=0;i< transform.parent.childCount;i++)
                 if(transform.parent.GetChild(i).transform!= transform)
                     Destroy(transform.parent.GetChild(i).gameObject);
+    }
+
+    public void DeadScreen()
+    {
+        Debug.Log("deadScreen");
+        if (deadScreen)
+            deadScreen.SetActive(true);
     }
 }

@@ -1335,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
+  DieScreen: {fileID: 0}
   Player: {fileID: 0}
 --- !u!4 &252067502
 Transform:
@@ -1380,6 +1381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Abcdefgh: {fileID: 1641575468}
   ScoreTxt: {fileID: 5056232666448953706}
+  RecordTxt: {fileID: 5056232666448953706}
   Speed: 100
 --- !u!114 &252067504
 MonoBehaviour:
@@ -5545,7 +5547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1009585397
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10056,9 +10058,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 260302470641623212, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+    - target: {fileID: 175695834777139384, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 1499358456672462022, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
       propertyPath: m_Pivot.x
@@ -10144,45 +10146,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3229469732105029366, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayKing (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3387443259681214788, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526295952778293674, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayBishop (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5160324966710117697, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayKnight (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5308572915163621684, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayTower (0)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5313102103506894198, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5814458203106357576, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayHetman (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5935882126433568683, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7821113529155421743, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8179607955214304749, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}
-      propertyPath: m_Name
-      value: PlayPawn (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b60fa20a871cb49b0202e78669a81a, type: 3}

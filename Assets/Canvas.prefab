@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 1242529588603974033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55329454, y: 0.60634357, z: 0.60634357}
+  m_LocalScale: {x: 0.43907067, y: 0.53462523, z: 0.53462523}
   m_Children: []
   m_Father: {fileID: 2927836981629500839}
   m_RootOrder: 1
@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 1665203985004793411}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.61554015, y: 0.60634357, z: 0.60634357}
+  m_LocalScale: {x: 0.5341811, y: 0.5538949, z: 0.5538949}
   m_Children: []
   m_Father: {fileID: 8870594254799368328}
   m_RootOrder: 1
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 8518705753803282180}
   - component: {fileID: 260302470641623212}
   m_Layer: 5
-  m_Name: PlayKing (5)
+  m_Name: PlayKing (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -356,7 +356,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -680,14 +680,14 @@ RectTransform:
   m_GameObject: {fileID: 4133212592139073833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5045025, y: 0.60634357, z: 0.60634357}
+  m_LocalScale: {x: 0.4666648, y: 0.60634357, z: 0.60634357}
   m_Children: []
   m_Father: {fileID: 2215473523032319299}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114, y: -6.1672974}
+  m_AnchoredPosition: {x: 114, y: 2.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2429363700142520263
@@ -1206,7 +1206,7 @@ GameObject:
   - component: {fileID: 2242707198496613816}
   - component: {fileID: 5935882126433568683}
   m_Layer: 5
-  m_Name: PlayTower (3)
+  m_Name: PlayTower (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,7 +1322,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1437,7 +1437,7 @@ GameObject:
   - component: {fileID: 7018315017730508614}
   - component: {fileID: 5313102103506894198}
   m_Layer: 5
-  m_Name: PlayHetman (4)
+  m_Name: PlayHetman (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1553,7 +1553,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1585,14 +1585,14 @@ RectTransform:
   m_GameObject: {fileID: 5881989239432442914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55329555, y: 0.60634464, z: 0.60634464}
+  m_LocalScale: {x: 0.503499, y: 0.55177367, z: 0.55177367}
   m_Children: []
   m_Father: {fileID: 8192495254601047294}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114, y: -6.6324}
+  m_AnchoredPosition: {x: 114, y: 0.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3734224564754802760
@@ -1915,14 +1915,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3d0dadae477e87c439ba2f489f90ea51, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1959,7 +1959,7 @@ RectTransform:
   m_GameObject: {fileID: 7784336151808873438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.52630246, y: 0.56138927, z: 0.56138927}
+  m_LocalScale: {x: 0.44663832, y: 0.52209204, z: 0.52209204}
   m_Children: []
   m_Father: {fileID: 1292491283361682200}
   m_RootOrder: 1
@@ -2348,7 +2348,7 @@ GameObject:
   - component: {fileID: 2831798635160484497}
   - component: {fileID: 3387443259681214788}
   m_Layer: 5
-  m_Name: PlayPawn (0)
+  m_Name: PlayPawn (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2464,7 +2464,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

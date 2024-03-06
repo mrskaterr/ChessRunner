@@ -13,6 +13,8 @@ public class FieldMove : MonoBehaviour
     int HowManyRows;
     [SerializeField] GameObject Abcdefgh;
     [SerializeField] GameObject ScoreTxt;
+    [SerializeField] GameObject RecordTxt;
+    int RecordInt;
     public float Speed;
     void Start()
     {
@@ -20,6 +22,8 @@ public class FieldMove : MonoBehaviour
         HowManyRowsStart=transform.childCount;
         HowManyRows=HowManyRowsStart;
         ScoreTxt.GetComponent<Text>().text=(HowManyRows-HowManyRowsStart).ToString();
+        RecordInt = PlayerPrefs.GetInt("Record" + PlayerPrefs.GetInt("Player"));
+        RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
     }
     void FixedUpdate()
     {
@@ -63,6 +67,13 @@ public class FieldMove : MonoBehaviour
 
                 Row.name=HowManyRows.ToString();
                 ScoreTxt.GetComponent<Text>().text=(HowManyRows-HowManyRowsStart).ToString();
+                if(HowManyRows - HowManyRowsStart> RecordInt)
+                {
+                    RecordInt = HowManyRows - HowManyRowsStart;
+                    RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
+                    PlayerPrefs.SetInt("Record" + PlayerPrefs.GetInt("Player"), RecordInt);
+                }
+                
             }
 
         }

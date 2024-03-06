@@ -12,9 +12,17 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("Player", EnumPawn);
         SceneManager.LoadScene("Game");
     }
+    public void Retray()
+    {
+        SceneManager.LoadScene("Game");
+    }
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
 }

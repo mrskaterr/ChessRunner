@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2368008771020921947}
   - component: {fileID: 2368008771020921946}
   - component: {fileID: -6236999609504318439}
-  - component: {fileID: 410106009775654794}
+  - component: {fileID: 6318689160029080665}
   m_Layer: 0
   m_Name: EnemyTower
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
---- !u!114 &410106009775654794
+--- !u!114 &6318689160029080665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2368008771020921948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5628fedff6fb66469ebcb9c89eb966e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2871fbb5c03b1f409a4e734ca0ee2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 3
+  character: 0
