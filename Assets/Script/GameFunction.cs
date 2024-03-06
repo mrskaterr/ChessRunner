@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameFunction : MonoBehaviour
 {
-    public Transform[] Board;
+    [HideInInspector]public Transform[] Board;
     public void Die()
     {
         Debug.Log("YOU DIE");

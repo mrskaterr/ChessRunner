@@ -1,27 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using static Enum;
 
 public class Player : GameFunction
 {
-    
-    Transform player;
-    
+    [SerializeField] Sprite[] Pawns;
+    [SerializeField] Transform[] FirstFields;
+    static Enum.Character character;
     void Awake()
     {
-        Debug.Log("int "+PlayerPrefs.GetInt("Player"));
-        Debug.Log("enum " + (EnumHelp.Character)PlayerPrefs.GetInt("Player"));
-        GetComponent<EnumHelp>().character = (EnumHelp.Character)PlayerPrefs.GetInt("Player");
-        player=transform;
+        character = (Character)PlayerPrefs.GetInt("Player");
+        GetComponent<Enum>().character = (Enum.Character)PlayerPrefs.GetInt("Player");
+    }
+    private void Start()
+    {
+
+        GetComponent<SpriteRenderer>().sprite = Pawns[(int)character];
+        transform.SetParent(FirstFields[(int)character]);
+
+
     }
     void FixedUpdate()
     {
-        AutoPosition(player);
-        if(player.parent.childCount>0)
-            for(int i=0;i<player.parent.childCount;i++)
-                if(player.parent.GetChild(i).transform!=player)
-                    Destroy(player.parent.GetChild(i).gameObject);
+        AutoPosition(transform);
+        if(transform.parent.childCount>0)
+            for(int i=0;i< transform.parent.childCount;i++)
+                if(transform.parent.GetChild(i).transform!= transform)
+                    Destroy(transform.parent.GetChild(i).gameObject);
     }
 }

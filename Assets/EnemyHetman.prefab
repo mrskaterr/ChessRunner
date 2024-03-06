@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6528210521414831785}
   - component: {fileID: 6528210521414831784}
   - component: {fileID: 2468701896711153441}
-  - component: {fileID: 5807143319392901759}
+  - component: {fileID: 5983004383097523857}
   m_Layer: 0
   m_Name: EnemyHetman
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
---- !u!114 &5807143319392901759
+--- !u!114 &5983004383097523857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6528210521414831786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5628fedff6fb66469ebcb9c89eb966e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2871fbb5c03b1f409a4e734ca0ee2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: 4

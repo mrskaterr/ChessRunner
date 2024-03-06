@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4977864484618834409}
   - component: {fileID: 4977864484618834410}
   - component: {fileID: 4122421889661979913}
-  - component: {fileID: 5873775734373689083}
+  - component: {fileID: 4377100066767319687}
   m_Layer: 0
   m_Name: EnemyBishop
   m_TagString: Untagged
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
---- !u!114 &5873775734373689083
+--- !u!114 &4377100066767319687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4977864484618834404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5628fedff6fb66469ebcb9c89eb966e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2871fbb5c03b1f409a4e734ca0ee2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 0
+  character: 2

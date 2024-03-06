@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChessBoardArray : GameFunction
 {
+    public Transform Player;
     Transform Character;
     void Start()
     {

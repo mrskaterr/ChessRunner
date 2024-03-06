@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 495278720184849638}
   - component: {fileID: 3082071279998332610}
   - component: {fileID: 4895079538722492356}
-  - component: {fileID: 981854784130163112}
+  - component: {fileID: 7238248352144465611}
   m_Layer: 0
   m_Name: EnemyPawn
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
---- !u!114 &981854784130163112
+--- !u!114 &7238248352144465611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 766353721075222533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5628fedff6fb66469ebcb9c89eb966e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2871fbb5c03b1f409a4e734ca0ee2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 0
+  character: 5
