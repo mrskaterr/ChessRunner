@@ -21,9 +21,12 @@ public class FieldMove : MonoBehaviour
         LastRow=transform.GetChild(transform.childCount-1);
         HowManyRowsStart=transform.childCount;
         HowManyRows=HowManyRowsStart;
-        ScoreTxt.GetComponent<Text>().text=(HowManyRows-HowManyRowsStart).ToString();
-        RecordInt = PlayerPrefs.GetInt("Record" + PlayerPrefs.GetInt("Player"));
-        RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
+        if(ScoreTxt.active)
+        {
+            ScoreTxt.GetComponent<Text>().text = (HowManyRows - HowManyRowsStart).ToString();
+            RecordInt = PlayerPrefs.GetInt("Record" + PlayerPrefs.GetInt("Player"));
+            RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
+        }
     }
     void FixedUpdate()
     {
