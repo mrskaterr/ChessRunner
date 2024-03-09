@@ -11,8 +11,11 @@ public class ChessBoardArray : GameFunction
         Board=new Transform[transform.childCount];
         for(int i=0;i<transform.childCount;i++){
             Board[i]=transform.GetChild(i);
+            Board[i].GetComponent<ArrayNumber>().realNumber = i;
         }
+        
     }
+   
     public void UpdateArray(){
         Transform[] NewBoard=new Transform[transform.childCount];
         for(int i=1;i<transform.childCount;i++)
@@ -23,7 +26,9 @@ public class ChessBoardArray : GameFunction
         Board=NewBoard;
         for(int i=0;i<transform.childCount;i++){
             for(int j=0;j<8;j++){
-                if(Board[i].GetChild(j).childCount==1)
+                if(Board[i].transform.GetComponent< ArrayNumber >())
+                    Board[i].transform.GetComponent<ArrayNumber>().realNumber = i;
+                if (Board[i].GetChild(j).childCount==1)
                 {
                     Character=Board[i].GetChild(j).GetChild(0);
 

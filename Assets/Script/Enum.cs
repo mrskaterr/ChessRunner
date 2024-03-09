@@ -7,10 +7,11 @@ public class Enum : MonoBehaviour
     public enum Character{
         Tower=  0,
         Knight= 1,
-        Bishop= 2,
+        Bishop_L= 2,
         Hetman= 3,
         King =  4,
-        Pawn=   5
+        Bishop_R = 5,
+        Pawn =   6
 
     }
     public Character character;

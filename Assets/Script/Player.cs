@@ -36,7 +36,7 @@ public class Player : GameFunction
 
     public void DeadScreen()
     {
-        Debug.Log("deadScreen");
+        DebLog("deadScreen");
         if (deadScreen)
             deadScreen.SetActive(true);
     }

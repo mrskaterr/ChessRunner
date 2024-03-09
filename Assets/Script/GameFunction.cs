@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 public class GameFunction : MonoBehaviour
 {
     
     [HideInInspector]public Transform[] Board;
-    [SerializeField] GameObject DieScreen;
     bool PlayerDead = false;
+    
+    public void DebLog(string txt )
+    {
+        Debug.Log(txt);
+    }
+
+
     public void Die(Transform player)
     {
         if (!PlayerDead)
         {
             PlayerDead = true;
-            Debug.Log("YOU DIE");
+            DebLog("YOU DIE");
             StartCoroutine(Wait(2.0f, player));
         }
     }
@@ -45,6 +52,15 @@ public class GameFunction : MonoBehaviour
         if(ChessBoard[i].GetChild(j).childCount==1)
             return ChessBoard[i].GetChild(j).GetChild(0);
         
+        return null;
+    }
+    public Transform IsChessman(Transform ChessBoard, int i, int j)
+    {
+        Board = ChessBoard.GetComponent<ChessBoardArray>().Board;
+
+        if (Board[i].transform.GetChild(j).childCount == 1)
+            return Board[i].transform.GetChild(j).GetChild(0);
+
         return null;
     }
     public bool IsPlayerDie(Transform[] ChessBoard,int i,int j,GameObject THIS)
@@ -152,11 +168,11 @@ public class GameFunction : MonoBehaviour
             if(j==0)continue;
             if(Number+j<Board.Length){
                 if(IsChessman(Board,Number+j,i)?.GetComponent<EnemyHetman>()){
-                    Debug.Log(IsChessman(Board,Number+j,i)?.name);
+                    DebLog(IsChessman(Board,Number+j,i)?.name);
                     return true;
                 }
                 else if(IsChessman(Board,Number+j,i)?.GetComponent<EnemyBishop>()){
-                    Debug.Log(IsChessman(Board,Number+j,i)?.name);
+                    DebLog(IsChessman(Board,Number+j,i)?.name);
                     return true;
                 }
             }
