@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Board: []
-  DieScreen: {fileID: 0}
 --- !u!114 &7238248352144465611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,4 +111,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2871fbb5c03b1f409a4e734ca0ee2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: 5
+  character: 6

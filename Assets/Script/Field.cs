@@ -5,36 +5,47 @@ using static Enum;
 
 public class Field : GameFunction
 {
-    static Transform ChessBoard;
-    static Transform Player;
-    static Enum.Character character;
-    int PlayerNumber;
-    int ClickedNumber;
-    int PlayerLetter;
-    int ClickedLetter;
+    public enum Letter
+    {
+        A=const_0, B, C, D, E, F, G, H
+    }
+    
+    [SerializeField] 
+    private Letter letter;
+    private Row row;
+    static ChessBoardArray ChessBoard;
+    static Player player;
+    static bool Up;
+    static bool Right;
+    static int PlayerNumber;
+    static int PlayerLetter;
+    static int buff;
 
-    bool Up;
-    bool Right;
+    public int GetLetter()
+    {
+        return (int)letter;
+    }
+    public int GetNumber()
+    {
+        return row.realNumber;
+    }
 
     private void Awake()
     {
-        ChessBoard = transform.parent.parent;
-
-        Player = transform.parent.parent.GetComponent<ChessBoardArray>().Player;
-        character = (Enum.Character)PlayerPrefs.GetInt("Player");
+        ChessBoard = transform.parent.parent.GetComponent<ChessBoardArray>();
+        row = transform.parent.GetComponent<Row>();
+        player = ChessBoard.Player();
     }
     void OnMouseDown()
     {
-        PlayerNumber = int.Parse(Player.parent.parent.name);
-        ClickedNumber = int.Parse(this.gameObject.transform.parent.name);
-        PlayerLetter = Player.parent.GetSiblingIndex();
-        ClickedLetter = this.gameObject.transform.GetSiblingIndex();
+        PlayerNumber = player.GetFieldNumber();
+        PlayerLetter = player.GetFieldLetter();
 
-        if (PlayerNumber == ClickedNumber && PlayerLetter == ClickedLetter) return;
-
+        if (PlayerNumber == GetNumber() && PlayerLetter == GetLetter())
+            return;
         if (this.gameObject.transform.position.y < 9.5f)
         {
-            switch (character)
+            switch (player.GetCharacter())
             {
                 case Enum.Character.Knight: Knight(); break;
                 case Enum.Character.Bishop_L: Bishop(); break;
@@ -46,83 +57,65 @@ public class Field : GameFunction
             }
         }
     }
-     void Hetman()
+
+    void Hetman()
     {
-        Bishop();
         Tower();
+        Bishop();
+
     }   
     void Knight()
     {
-   
-        if ((PlayerNumber + 1 == ClickedNumber || PlayerNumber - 1 == ClickedNumber)
-           && (PlayerLetter + 2 == ClickedLetter || PlayerLetter - 2 == ClickedLetter))
-            Player.SetParent(this.gameObject.transform);
-        else if ((PlayerNumber + 2 == ClickedNumber || PlayerNumber - 2 == ClickedNumber)
-        && (PlayerLetter - 1 == ClickedLetter || PlayerLetter + 1 == ClickedLetter))
-            Player.SetParent(this.gameObject.transform);
+        
+        if ((PlayerNumber + const_1 == GetNumber() || PlayerNumber - const_1 == GetNumber())
+           && (PlayerLetter + const_2 == GetLetter() || PlayerLetter - const_2 == GetLetter()))
+            player.transform.SetParent(transform);
+        else if ((PlayerNumber + const_2 == GetNumber() || PlayerNumber - const_2 == GetNumber())
+        && (PlayerLetter - const_1 == GetLetter() || PlayerLetter + const_1 == GetLetter()))
+            player.transform.SetParent(transform);
         DebLog("knight");
     }
     void Bishop()
     {
-        int diffNumber = ClickedNumber - PlayerNumber;
-        Up = diffNumber >= 0 ? true : false;
-        diffNumber = Mathf.Abs(diffNumber);
+        buff = GetNumber() - PlayerNumber;
+        Up = buff >= const_0 ? true : false;
+        buff = Mathf.Abs(buff);
 
-        Right = ClickedLetter - PlayerLetter >= 0 ? true : false;
+        Right = GetLetter() - PlayerLetter >= const_0 ? true : false;
 
-        if(diffNumber == Mathf.Abs( ClickedLetter - PlayerLetter))
+        if(buff == Mathf.Abs(GetLetter() - PlayerLetter)) //(buff = Mathf.Abs(buff))==
         {
-            for (int i = 1; i < diffNumber; i++)
-                if (IsChessman(ChessBoard, Player.parent.parent.GetComponent<ArrayNumber>().realNumber  + (Up ? i : -i ), PlayerLetter + (Right ? i : -i)) != null)
+            for (int i = const_1; i < buff; i++)
+                if (IsChessman(ChessBoard.Board, PlayerNumber + (Up ? i : -i ), (int)PlayerLetter + (Right ? i : -i)) != null)
                     return;
-            Player.SetParent(this.gameObject.transform);
+            player.transform.SetParent(transform);
         }
             
 
     }
     void Tower()
-    { 
-        if (PlayerNumber != ClickedNumber && PlayerLetter != ClickedLetter)
+    {
+        if (PlayerNumber != GetNumber() && PlayerLetter != GetLetter())
             return;
 
-        if (PlayerNumber == ClickedNumber)
-            for (int i = 1; i < Mathf.Abs(ClickedLetter - PlayerLetter); i++)
-                if (IsChessman(ChessBoard, Player.parent.parent.GetComponent<ArrayNumber>().realNumber, PlayerLetter + (ClickedLetter > PlayerLetter ? i : -i)) != null)
+        if (PlayerNumber == GetNumber())
+            for (int i = const_1; i < Mathf.Abs(GetLetter() - PlayerLetter); i++)
+                if (IsChessman(ChessBoard.Board, PlayerNumber, PlayerLetter + (GetLetter() > PlayerLetter ? i : -i)) != null)
                     return;
-        if (PlayerLetter == ClickedLetter)
-            for (int i = 1; i < Mathf.Abs(PlayerNumber - ClickedNumber); i++)
-                if (IsChessman(ChessBoard, Player.parent.parent.GetComponent<ArrayNumber>().realNumber + (ClickedNumber > PlayerNumber ? i : -i), ClickedLetter) != null)
+        if (PlayerLetter == GetLetter())
+            for (int i = const_1; i < Mathf.Abs(PlayerNumber - GetNumber()); i++)
+                if (IsChessman(ChessBoard.Board, PlayerNumber + (GetNumber() > PlayerNumber ? i : -i), GetLetter()) != null)
                     return;
 
-        Player.SetParent(this.gameObject.transform);
-
+        player.transform.SetParent(transform);
 
     }
     void King()
     {
-        if (PlayerNumber == ClickedNumber && (PlayerLetter  == ClickedLetter + 1 || PlayerLetter  == ClickedLetter - 1))
+        if((PlayerNumber == GetNumber() + const_1 || PlayerNumber == GetNumber() - const_1 || PlayerNumber == GetNumber())  
+        && (PlayerLetter == GetLetter() + const_1 || PlayerLetter == GetLetter() - const_1 || PlayerLetter == GetLetter()))
         {
-            Player.SetParent(this.gameObject.transform);
-        }
-        else if (PlayerLetter == ClickedLetter && (PlayerNumber == ClickedNumber + 1 || PlayerNumber  == ClickedNumber - 1))
-        {
-            Player.SetParent(this.gameObject.transform);
-        }
-        else if(PlayerNumber == ClickedNumber + 1 && PlayerLetter == ClickedLetter + 1)
-        {
-            Player.SetParent(this.gameObject.transform);
-        }
-        else if(PlayerNumber == ClickedNumber - 1 && PlayerLetter  == ClickedLetter + 1)
-        {
-            Player.SetParent(this.gameObject.transform);
-        }
-        else if(PlayerNumber == ClickedNumber + 1 && PlayerLetter  == ClickedLetter - 1)
-        {
-            Player.SetParent(this.gameObject.transform);
-        }
-        else if(PlayerNumber == ClickedNumber - 1 && PlayerLetter == ClickedLetter - 1)
-        {
-            Player.SetParent(this.gameObject.transform);
+            player.transform.SetParent(transform);
         }
     }
 }  

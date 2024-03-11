@@ -24,5 +24,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    public void Switch(GameObject ob)
+    {
+        ob.SetActive(!ob.active);
+    }
 
 }

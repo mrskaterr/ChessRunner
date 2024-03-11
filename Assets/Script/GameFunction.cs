@@ -8,7 +8,9 @@ public class GameFunction : MonoBehaviour
     
     [HideInInspector]public Transform[] Board;
     bool PlayerDead = false;
-    
+    public const short const_0 = 0;
+    public const short const_1 = 1;
+    public const short const_2 = 2;
     public void DebLog(string txt )
     {
         Debug.Log(txt);
@@ -43,9 +45,11 @@ public class GameFunction : MonoBehaviour
     }
     public void AutoPosition(Transform Chessman)
     {
-        Chessman.position=new Vector3(Chessman.parent.transform.position.x, 
-                                    Chessman.parent.transform.position.y,
-                                    -1);
+
+            Chessman.position = new Vector3(Chessman.parent.transform.position.x,
+                                       Chessman.parent.transform.position.y,
+                                       -1);
+        
     }
     public Transform IsChessman(Transform[] ChessBoard,int i,int j)
     {

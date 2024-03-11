@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Field2 : MonoBehaviour
 {
-    static Transform ChessBoard;
+    static Save save;
     int ClickedNumber;
     int ClickedLetter;
 
     
     private void Awake()
     {
-        ChessBoard = transform.parent.parent;
+        save = transform.parent.parent.GetComponent<Save>();
     }
 
 
@@ -22,9 +22,11 @@ public class Field2 : MonoBehaviour
         {
             ClickedNumber = int.Parse(this.gameObject.transform.parent.name);
             ClickedLetter = this.gameObject.transform.GetSiblingIndex();
-            Instantiate(ChessBoard.GetComponent<Save>().last()).transform.SetParent(transform);
+            if (save.last() != null)
+                Instantiate(save.last(), transform);
+
         }
-        //else Destroy(transform.GetChild(0));
+        else Destroy(transform.GetChild(0).gameObject);
 
 
     }

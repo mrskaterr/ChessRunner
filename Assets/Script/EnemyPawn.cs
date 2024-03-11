@@ -17,6 +17,7 @@ public class EnemyPawn : GameFunction
     }
     void FixedUpdate()
     {
+
         AutoPosition(transform);
         if(BlackLine(transform))
         {

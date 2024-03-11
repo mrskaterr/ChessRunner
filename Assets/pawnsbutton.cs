@@ -9,6 +9,11 @@ public class pawnsbutton : MonoBehaviour
     static pawnsbutton last;
     public GameObject pref;
     SpriteRenderer sp;
+    public pawnsbutton Last()
+    {
+        if (last != null) { return last; }
+        return null;
+    }
     private void Start()
     {
         sp = GetComponent<SpriteRenderer>();
@@ -16,6 +21,13 @@ public class pawnsbutton : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (active == true)
+        {
+            active = false;
+            sp.color = Color.white;
+            last = null; 
+            return;
+        }
         if (last != null) 
         {
             last.active = false;

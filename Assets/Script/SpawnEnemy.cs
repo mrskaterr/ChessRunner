@@ -16,15 +16,35 @@ public class SpawnEnemy : MonoBehaviour
     int SpawnZ=-1;
     int RND;
     public Transform[] Enemy;
+    public string []txt;
+    public int i = 0;
+    public string buff;
     void Start()
     {
-        LastHetmanDistance=HetmanMinDistance;
+        if (gameObject.GetComponent<Save>())
+        {
+            txt = PlayerPrefs.GetString("level").Split(';');
+
+        }
+        LastHetmanDistance =HetmanMinDistance;
         LastTowerDistance=TowerMinDistance;
         LastBishopDistance=BishopMinDistance;
         LastKnightDistance=KnightMinDistance;
     }
     public void Spawn(Transform Fields)
     {
+
+        if(gameObject.GetComponent<Save>())
+        {
+            buff = txt[i].Substring(0, txt[i].Length - 2);
+            if (Fields.name==txt[i].Substring(0, txt[i].Length-2))
+            {
+                Instantiate(Enemy[txt[i][txt[i].Length - 1]], Fields.GetChild(((int)(txt[i].ToCharArray())[txt[i].Length - 2]) - 65));
+                i++;
+            }
+            return;
+            
+        }
         Transform Field;
         //Random.Range(0,3)==0
         Field=Fields.GetChild(Random.Range(0,Fields.childCount));

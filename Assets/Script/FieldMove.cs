@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class FieldMove : MonoBehaviour
 {
+    bool save=false;
     Transform Row;
     Transform LastRow;
     const float StartSpeed=0.001f;
@@ -18,6 +19,8 @@ public class FieldMove : MonoBehaviour
     public float Speed;
     void Start()
     {
+        if (gameObject.GetComponent<Save>())
+            save = true;
         LastRow=transform.GetChild(transform.childCount-1);
         HowManyRowsStart=transform.childCount;
         HowManyRows=HowManyRowsStart;
@@ -52,6 +55,8 @@ public class FieldMove : MonoBehaviour
                         if(Row.GetChild(j).GetChild(0).gameObject.GetComponent<Player>())
                             SceneManager.LoadScene("Game");
 
+                        if (save)
+                            gameObject.GetComponent<Save>().SAVE(Row.name+ Row.GetChild(j).name+ (int)Row.GetChild(j).GetChild(0).gameObject.GetComponent<Enum>().character+";");
                         Destroy(Row.GetChild(j).GetChild(0).gameObject);
                     }
                 }
@@ -59,7 +64,7 @@ public class FieldMove : MonoBehaviour
                 Row.position=new Vector3(Row.position.x,LastRow.position.y+1f,Row.position.z);//ChessBoard Speed Fixed
                 LastRow=Row;//ChessBoard Speed Fixed
 
-                GetComponent<SpawnEnemy>().Spawn(Row);
+                if(!save)GetComponent<SpawnEnemy>().Spawn(Row);
                 ++HowManyRows;
 
                 if(HowManyRows%10==0)//Faster
@@ -69,12 +74,15 @@ public class FieldMove : MonoBehaviour
                     Row.position-=new Vector3(0,StartSpeed*Speed,0);
 
                 Row.name=HowManyRows.ToString();
-                ScoreTxt.GetComponent<Text>().text=(HowManyRows-HowManyRowsStart).ToString();
-                if(HowManyRows - HowManyRowsStart> RecordInt)
+                if(ScoreTxt.active)
                 {
-                    RecordInt = HowManyRows - HowManyRowsStart;
-                    RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
-                    PlayerPrefs.SetInt("Record" + PlayerPrefs.GetInt("Player"), RecordInt);
+                    ScoreTxt.GetComponent<Text>().text = (HowManyRows - HowManyRowsStart).ToString();
+                    if (HowManyRows - HowManyRowsStart > RecordInt)
+                    {
+                        RecordInt = HowManyRows - HowManyRowsStart;
+                        RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
+                        PlayerPrefs.SetInt("Record" + PlayerPrefs.GetInt("Player"), RecordInt);
+                    }
                 }
                 
             }

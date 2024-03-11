@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrayNumber : MonoBehaviour
+public class Row : MonoBehaviour
 {
-    //[HideInInspector]
+    public int distanceNumber;
     public int realNumber;
 }

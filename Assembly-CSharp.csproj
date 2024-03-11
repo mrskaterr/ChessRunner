@@ -72,8 +72,8 @@
     <Compile Include="Assets\Script\FieldMove.cs" />
     <Compile Include="Assets\Script\MainMenu.cs" />
     <Compile Include="Assets\Script\ChessBoardArray.cs" />
-    <Compile Include="Assets\ArrayNumber.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Row.cs" />
     <Compile Include="Assets\Save.cs" />
     <Compile Include="Assets\pawnsbutton.cs" />
     <Compile Include="Assets\Script\BlockedCrossing.cs" />
