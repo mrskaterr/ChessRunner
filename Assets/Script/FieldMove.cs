@@ -49,7 +49,7 @@ public class FieldMove : MonoBehaviour
                             SceneManager.LoadScene("Game");
 
                         if (save)
-                            gameObject.GetComponent<Save>().SAVE(Row.name+ Row.GetChild(j).name+ (int)Row.GetChild(j).GetChild(0).gameObject.GetComponent<Enum>().character+";");
+                            gameObject.GetComponent<Save>().SAVE(Row.GetComponent<Row>().distanceNumber+ Row.GetChild(j).name+ (int)Row.GetChild(j).GetChild(0).gameObject.GetComponent<Enum>().character+";");
                         Destroy(Row.GetChild(j).GetChild(0).gameObject);
                     }
                 }

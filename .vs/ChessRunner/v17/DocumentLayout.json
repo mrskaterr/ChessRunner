@@ -3,56 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\spawnenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\spawnenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\chessboardarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\chessboardarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemytower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemytower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\gamefunction.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamefunction.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\fieldmove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\fieldmove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemypawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemypawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\row.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\row.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\field.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\save.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\field2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\field2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\chessboardarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\chessboardarray.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{463FA9B1-4659-0E5E-6DC9-8363739DF44B}|Assembly-CSharp-Editor.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\editor\\sceneselectorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{463FA9B1-4659-0E5E-6DC9-8363739DF44B}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\script\\editor\\sceneselectorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemytower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemytower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\gamefunction.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\gamefunction.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemypawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemypawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\enemybishop.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemybishop.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemybishop.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\enemyknight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemyknight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemyknight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\script\\enemyhetman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\enemyhetman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\assets\\row.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\row.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|c:\\users\\paw\\documents\\programowanie\\chessrunner\\assets\\script\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF4B26B-B77C-E681-8037-92336AD7E24E}|Assembly-CSharp.csproj|solutionrelative:assets\\script\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,37 +78,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
+              "Title": "SpawnEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\SpawnEnemy.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\SpawnEnemy.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\SpawnEnemy.cs",
+              "RelativeToolTip": "Assets\\Script\\SpawnEnemy.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwC8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T17:55:29.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Save.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Save.cs",
+              "RelativeDocumentMoniker": "Assets\\Save.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Save.cs",
+              "RelativeToolTip": "Assets\\Save.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T17:47:44.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Field2.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Field2.cs",
+              "RelativeDocumentMoniker": "Assets\\Field2.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Field2.cs",
+              "RelativeToolTip": "Assets\\Field2.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwB4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T17:32:59.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SceneSelectorWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Editor\\SceneSelectorWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\Editor\\SceneSelectorWindow.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Editor\\SceneSelectorWindow.cs",
+              "RelativeToolTip": "Assets\\Script\\Editor\\SceneSelectorWindow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T17:32:08.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\MainMenu.cs",
               "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\MainMenu.cs",
               "RelativeToolTip": "Assets\\Script\\MainMenu.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAArwBwAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T15:14:16.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GameFunction.cs",
-              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\GameFunction.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\GameFunction.cs",
-              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\GameFunction.cs",
-              "RelativeToolTip": "Assets\\Script\\GameFunction.cs",
-              "ViewState": "AQIAAIIAAAAAAAAAAAAgwJQAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T14:49:58.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "EnemyKnight.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\EnemyKnight.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyKnight.cs",
@@ -100,12 +155,11 @@
               "RelativeToolTip": "Assets\\Script\\EnemyKnight.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T14:14:42.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T14:14:42.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "EnemyHetman.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\EnemyHetman.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyHetman.cs",
@@ -113,12 +167,11 @@
               "RelativeToolTip": "Assets\\Script\\EnemyHetman.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T10:48:24.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T10:48:24.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "EnemyBishop.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\EnemyBishop.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyBishop.cs",
@@ -126,12 +179,11 @@
               "RelativeToolTip": "Assets\\Script\\EnemyBishop.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T13:53:59.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T13:53:59.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "Row.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Row.cs",
               "RelativeDocumentMoniker": "Assets\\Row.cs",
@@ -144,20 +196,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ChessBoardArray.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\ChessBoardArray.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\ChessBoardArray.cs",
               "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\ChessBoardArray.cs",
               "RelativeToolTip": "Assets\\Script\\ChessBoardArray.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAjAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-06T00:41:04.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "Enum.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Enum.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Enum.cs",
@@ -165,38 +217,62 @@
               "RelativeToolTip": "Assets\\Script\\Enum.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T14:42:02.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T14:42:02.035Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Player.cs",
               "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Player.cs",
               "RelativeToolTip": "Assets\\Script\\Player.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAnwDEAAAAZAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAewDwAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-09T12:02:22.959Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Field.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Field.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\Field.cs",
               "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\Field.cs",
               "RelativeToolTip": "Assets\\Script\\Field.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowC8AAAAZAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAewCwAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-06T00:50:17.366Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "FieldMove.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\FieldMove.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\FieldMove.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\FieldMove.cs",
+              "RelativeToolTip": "Assets\\Script\\FieldMove.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDMAAAB/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-05T23:00:12.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameFunction.cs",
+              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\GameFunction.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\GameFunction.cs",
+              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\GameFunction.cs",
+              "RelativeToolTip": "Assets\\Script\\GameFunction.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAgwJQAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T14:49:58.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "EnemyPawn.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\EnemyPawn.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyPawn.cs",
@@ -204,25 +280,11 @@
               "RelativeToolTip": "Assets\\Script\\EnemyPawn.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-09T11:14:22.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-09T11:14:22.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FieldMove.cs",
-              "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\FieldMove.cs",
-              "RelativeDocumentMoniker": "Assets\\Script\\FieldMove.cs",
-              "ToolTip": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\FieldMove.cs",
-              "RelativeToolTip": "Assets\\Script\\FieldMove.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAYwEQAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T23:00:12.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "EnemyTower.cs",
               "DocumentMoniker": "C:\\Users\\Paw\\Documents\\Programowanie\\ChessRunner\\Assets\\Script\\EnemyTower.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\EnemyTower.cs",
@@ -230,8 +292,7 @@
               "RelativeToolTip": "Assets\\Script\\EnemyTower.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAABQAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-11T02:37:48.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-11T02:37:48.042Z"
             }
           ]
         }

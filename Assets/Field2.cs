@@ -8,8 +8,14 @@ public class Field2 : MonoBehaviour
     static Save save;
     int ClickedNumber;
     int ClickedLetter;
+    public enum Letter
+    {
+        A = 0, B, C, D, E, F, G, H
+    }
 
-    
+    [SerializeField]
+    private Letter letter;
+
     private void Awake()
     {
         save = transform.parent.parent.GetComponent<Save>();
@@ -20,8 +26,8 @@ public class Field2 : MonoBehaviour
     {
         if (transform.childCount == 0)
         {
-            ClickedNumber = int.Parse(this.gameObject.transform.parent.name);
-            ClickedLetter = this.gameObject.transform.GetSiblingIndex();
+            ClickedNumber = transform.parent.GetComponent<Row>().distanceNumber;
+            ClickedLetter = (int)letter;
             if (save.last() != null)
                 Instantiate(save.last(), transform);
 
