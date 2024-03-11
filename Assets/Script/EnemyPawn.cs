@@ -5,15 +5,11 @@ using UnityEngine;
 public class EnemyPawn : GameFunction
 {    
     Sprite BlackSprite;
-    Transform ChessBoard;
-    int PawnLetter;
-    int PawnNumber;
+    Field field;
     void Start()
     {
-        BlackSprite=Resources.Load<Sprite>("Sprite/BlackPawn");
-        ChessBoard=transform.parent.parent.parent;
-        PawnLetter=transform.parent.GetSiblingIndex();
-        PawnNumber=transform.parent.parent.parent.childCount-1;
+        field = transform.parent.GetComponent<Field>();
+        BlackSprite =Resources.Load<Sprite>("Sprite/BlackPawn");
     }
     void FixedUpdate()
     {
@@ -22,12 +18,10 @@ public class EnemyPawn : GameFunction
         if(BlackLine(transform))
         {
             ChangeToBlack(gameObject,BlackSprite);
-            PawnAttack(ChessBoard,PawnNumber,PawnLetter,gameObject);
+            if (field)
+                PawnAttack(field.GetNumber(), field.GetLetter());
         }
 
     }
-    public void ChangePawnNumber()
-    {
-        --PawnNumber;
-    }
+
 }

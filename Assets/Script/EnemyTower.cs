@@ -6,15 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnemyTower : GameFunction
 {
     Sprite BlackSprite;
-    Transform ChessBoard;
-    int TowerLetter;
-    int TowerNumber;
+    Field field;
     void Start()
     {
-        BlackSprite=Resources.Load<Sprite>("Sprite/BlackTower");
-        ChessBoard=transform.parent.parent.parent;
-        TowerLetter=transform.parent.GetSiblingIndex();
-        TowerNumber=transform.parent.parent.parent.childCount-1;
+        field = transform.parent?.GetComponent<Field>();
+        BlackSprite =Resources.Load<Sprite>("Sprite/BlackTower");
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -22,13 +18,11 @@ public class EnemyTower : GameFunction
         AutoPosition(transform);
         if(BlackLine(transform))
         {
-            prostyatak(ChessBoard,TowerNumber,TowerLetter,gameObject);
-            ChangeToBlack(gameObject,BlackSprite);
+            ChangeToBlack(gameObject, BlackSprite);
+            if(field)
+                prostyatak(field.GetNumber(), field.GetLetter());
         }
     }
-    public void ChangeTowerNumber()
-    {
-        --TowerNumber;
-    }
+
 
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChessBoardArray : GameFunction
 {
     [SerializeField] Player player;
-    Transform Character;
     public Player Player()
     {
         return player;
@@ -33,18 +32,6 @@ public class ChessBoardArray : GameFunction
         Board=NewBoard;
         for(int i=0;i<transform.childCount;i++){
                 Board[i].GetComponent<Row>().realNumber = i;
-            for (int j=0;j<8;j++){
-                if (Board[i].GetChild(j).childCount==1)
-                {
-                    Character=Board[i].GetChild(j).GetChild(0);
-
-                    Character.GetComponent<EnemyBishop>()?.ChangeBishopNumber();
-                    Character.GetComponent<EnemyHetman>()?.ChangeHetmanNumber();
-                    Character.GetComponent<EnemyTower>()?.ChangeTowerNumber();
-                    Character.GetComponent<EnemyPawn>()?.ChangePawnNumber();
-                    Character.GetComponent<EnemyKnight>()?.ChangeKnightNumber();
-                } 
-            }
         }
     }
 }

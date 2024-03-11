@@ -29,6 +29,10 @@ public class Field : GameFunction
     {
         return row.realNumber;
     }
+    public int GetDistance()
+    {
+        return row.distanceNumber;
+    }
 
     private void Awake()
     {
@@ -41,9 +45,9 @@ public class Field : GameFunction
         PlayerNumber = player.GetFieldNumber();
         PlayerLetter = player.GetFieldLetter();
 
-        if (PlayerNumber == GetNumber() && PlayerLetter == GetLetter())
+        if (PlayerDead || PlayerNumber == GetNumber() && PlayerLetter == GetLetter())
             return;
-        if (this.gameObject.transform.position.y < 9.5f)
+        if (transform.position.y < 9.5f)
         {
             switch (player.GetCharacter())
             {
@@ -86,7 +90,7 @@ public class Field : GameFunction
         if(buff == Mathf.Abs(GetLetter() - PlayerLetter)) //(buff = Mathf.Abs(buff))==
         {
             for (int i = const_1; i < buff; i++)
-                if (IsChessman(ChessBoard.Board, PlayerNumber + (Up ? i : -i ), (int)PlayerLetter + (Right ? i : -i)) != null)
+                if (IsChessman(PlayerNumber + (Up ? i : -i ), (int)PlayerLetter + (Right ? i : -i)) != null)
                     return;
             player.transform.SetParent(transform);
         }
@@ -100,11 +104,11 @@ public class Field : GameFunction
 
         if (PlayerNumber == GetNumber())
             for (int i = const_1; i < Mathf.Abs(GetLetter() - PlayerLetter); i++)
-                if (IsChessman(ChessBoard.Board, PlayerNumber, PlayerLetter + (GetLetter() > PlayerLetter ? i : -i)) != null)
+                if (IsChessman( PlayerNumber, PlayerLetter + (GetLetter() > PlayerLetter ? i : -i)) != null)
                     return;
         if (PlayerLetter == GetLetter())
             for (int i = const_1; i < Mathf.Abs(PlayerNumber - GetNumber()); i++)
-                if (IsChessman(ChessBoard.Board, PlayerNumber + (GetNumber() > PlayerNumber ? i : -i), GetLetter()) != null)
+                if (IsChessman( PlayerNumber + (GetNumber() > PlayerNumber ? i : -i), GetLetter()) != null)
                     return;
 
         player.transform.SetParent(transform);

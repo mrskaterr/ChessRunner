@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class EnemyKnight : GameFunction
 {
-    // Start is called before the first frame update
     Sprite BlackSprite;
-    Transform ChessBoard;
-    int KnightLetter;
-    int KnightNumber;
+    Field field;
     void Start()
     {
-        BlackSprite=Resources.Load<Sprite>("Sprite/BlackKnight");
-        ChessBoard=transform.parent.parent.parent;
-        KnightLetter=transform.parent.GetSiblingIndex();
-        KnightNumber=transform.parent.parent.parent.childCount-1;
+        field = transform.parent.GetComponent<Field>();
+        BlackSprite =Resources.Load<Sprite>("Sprite/BlackKnight");
+
     }
     void FixedUpdate()
     {
@@ -22,11 +18,9 @@ public class EnemyKnight : GameFunction
         if(BlackLine(transform))
         {
             ChangeToBlack(gameObject,BlackSprite);
-            KnightAttack(ChessBoard,KnightNumber,KnightLetter,gameObject);
+            if (field)
+                KnightAttack( field.GetNumber(), field.GetLetter());
         }
     }
-    public void ChangeKnightNumber()
-    {
-        --KnightNumber;
-    }
+
 }

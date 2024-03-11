@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 using static Enum;
 
 public class Player : GameFunction
@@ -11,11 +13,16 @@ public class Player : GameFunction
     [SerializeField] Sprite[] Pawns;
     [SerializeField] Transform[] FirstFields;
     [SerializeField] GameObject deadScreen;
+    [SerializeField] Text ScoreTXT;
+    [SerializeField] Text RecordTXT;
+    private int Score;
+    private int Record;
     private Field field;
     static Enum.Character character;
 
     void Awake()
     {
+        Record = PlayerPrefs.GetInt("Record" + PlayerPrefs.GetInt("Player"));
         character = (Character)PlayerPrefs.GetInt("Player");
         GetComponent<Enum>().character = character;
     }
@@ -25,10 +32,8 @@ public class Player : GameFunction
     }
     private void Start()
     {
-
         GetComponent<SpriteRenderer>().sprite = Pawns[(int)character];
         transform.SetParent(FirstFields[(int)character]);
-
 
     }
     void FixedUpdate()
@@ -40,6 +45,10 @@ public class Player : GameFunction
                 if(transform.parent.GetChild(i).transform!= transform)
                     Destroy(transform.parent.GetChild(i).gameObject);
     }
+    private void LateUpdate()
+    {
+        GetFieldNumber();
+    }
 
     public void DeadScreen()
     {
@@ -49,6 +58,20 @@ public class Player : GameFunction
     }
     public int GetFieldNumber()
     {
+        if (ScoreTXT.enabled)
+        {
+            if (Score < field.GetDistance())
+            {
+                Score = field.GetDistance();
+                ScoreTXT.text = Score.ToString();
+            }
+            if (Score > Record)
+            {
+                Record = Score;
+            }
+            RecordTXT.text = Record.ToString();
+        }
+
         return field.GetNumber();
     }
     public int GetFieldLetter()

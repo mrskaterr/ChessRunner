@@ -6,16 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnemyBishop : GameFunction
 {
     Sprite BlackSprite;
-    Transform ChessBoard;
-    Transform Parent;
-    int BishopLetter;
-    int BishopNumber;
+    Field field;
     void Start()
     {
+        field = transform.parent.GetComponent<Field>();
         BlackSprite = Resources.Load<Sprite>("Sprite/BlackBishop");
-        ChessBoard=transform.parent.parent.parent;
-        BishopLetter=transform.parent.GetSiblingIndex();
-        BishopNumber=transform.parent.parent.parent.childCount-1;
     }
     void FixedUpdate()
     {
@@ -23,11 +18,9 @@ public class EnemyBishop : GameFunction
         if(BlackLine(transform))
         {
             ChangeToBlack(gameObject,BlackSprite);
-            krzywyatak(ChessBoard,BishopNumber,BishopLetter,gameObject);
+            if (field)
+                krzywyatak(field.GetNumber(), field.GetLetter());
         }
     }
-    public void ChangeBishopNumber()
-    {
-        --BishopNumber;
-    }
+
 }

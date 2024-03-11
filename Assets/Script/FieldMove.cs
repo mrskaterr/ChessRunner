@@ -10,26 +10,19 @@ public class FieldMove : MonoBehaviour
     Transform Row;
     Transform LastRow;
     const float StartSpeed=0.001f;
-    int HowManyRowsStart;
+    //int HowManyRowsStart;
     int HowManyRows;
     [SerializeField] GameObject Abcdefgh;
-    [SerializeField] GameObject ScoreTxt;
-    [SerializeField] GameObject RecordTxt;
-    int RecordInt;
+
     public float Speed;
     void Start()
     {
         if (gameObject.GetComponent<Save>())
             save = true;
         LastRow=transform.GetChild(transform.childCount-1);
-        HowManyRowsStart=transform.childCount;
-        HowManyRows=HowManyRowsStart;
-        if(ScoreTxt.active)
-        {
-            ScoreTxt.GetComponent<Text>().text = (HowManyRows - HowManyRowsStart).ToString();
-            RecordInt = PlayerPrefs.GetInt("Record" + PlayerPrefs.GetInt("Player"));
-            RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
-        }
+        HowManyRows = transform.childCount;
+        //HowManyRowsStart=transform.childCount;
+        //HowManyRows=HowManyRowsStart;
     }
     void FixedUpdate()
     {
@@ -38,14 +31,14 @@ public class FieldMove : MonoBehaviour
             if(Abcdefgh.transform.position.y<=-2)
                 Abcdefgh.SetActive(false);
             else
-                Abcdefgh.transform.position-=new Vector3(0,StartSpeed*Speed,0);
+                Abcdefgh.transform.position+=Vector3.down*StartSpeed* Speed;
         }
 
         for(int i=0;i<transform.childCount;i++)//Chessboard Move
         {
             Row=transform.GetChild(i);
-            Row.position-=new Vector3(0,StartSpeed*Speed,0);
-            if(Row.position.y<=-1)
+            Row.position += Vector3.down * StartSpeed * Speed;
+            if (Row.position.y<=-1)
             {
                 GetComponent<ChessBoardArray>().UpdateArray();
                 for(int j=0;j<Row.childCount;j++)//Delete chessman or kill player
@@ -67,23 +60,23 @@ public class FieldMove : MonoBehaviour
                 if(!save)GetComponent<SpawnEnemy>().Spawn(Row);
                 ++HowManyRows;
 
-                if(HowManyRows%10==0)//Faster
+                if(Row.GetComponent<Row>().distanceNumber%10==0)//Faster
                     ++Speed;
 
-                if(((HowManyRows-HowManyRowsStart-1)%16==0))//ChessBoard Speed Fixed
-                    Row.position-=new Vector3(0,StartSpeed*Speed,0);
+                if (((Row.GetComponent<Row>().distanceNumber - 1) % 16 == 0))//ChessBoard Speed Fixed
+                    Row.position += Vector3.down*StartSpeed * Speed;
 
-                Row.name=HowManyRows.ToString();
-                if(ScoreTxt.active)
-                {
-                    ScoreTxt.GetComponent<Text>().text = (HowManyRows - HowManyRowsStart).ToString();
-                    if (HowManyRows - HowManyRowsStart > RecordInt)
-                    {
-                        RecordInt = HowManyRows - HowManyRowsStart;
-                        RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
-                        PlayerPrefs.SetInt("Record" + PlayerPrefs.GetInt("Player"), RecordInt);
-                    }
-                }
+                //Row.name=HowManyRows.ToString();
+                //if(ScoreTxt.active)
+                //{
+                //    ScoreTxt.GetComponent<Text>().text = (HowManyRows - HowManyRowsStart).ToString();
+                //    if (HowManyRows - HowManyRowsStart > RecordInt)
+                //    {
+                //        RecordInt = HowManyRows - HowManyRowsStart;
+                //        RecordTxt.GetComponent<Text>().text = RecordInt.ToString();
+                //        PlayerPrefs.SetInt("Record" + PlayerPrefs.GetInt("Player"), RecordInt);
+                //    }
+                //}
                 
             }
 

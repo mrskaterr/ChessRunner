@@ -5,16 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnemyHetman : GameFunction
 {
-    Transform ChessBoard;
     Sprite BlackSprite;
-    int HetmanLetter;
-    int HetmanNumber;
+    Field field;
     void Start()
     {
+        field = transform.parent.GetComponent<Field>();
         BlackSprite=Resources.Load<Sprite>("Sprite/BlackHetman");
-        ChessBoard=transform.parent.parent.parent;
-        HetmanLetter=transform.parent.GetSiblingIndex();
-        HetmanNumber=transform.parent.parent.parent.childCount-1;
     }
     void FixedUpdate()
     {
@@ -22,12 +18,12 @@ public class EnemyHetman : GameFunction
         if(BlackLine(transform))
         {
             ChangeToBlack(gameObject,BlackSprite);
-            prostyatak(ChessBoard,HetmanNumber,HetmanLetter,gameObject);
-            krzywyatak(ChessBoard,HetmanNumber,HetmanLetter,gameObject);
+            if (field)
+            {
+                prostyatak(field.GetNumber(), field.GetLetter());
+                krzywyatak(field.GetNumber(), field.GetLetter());
+            }
         }
     }
-    public void ChangeHetmanNumber()
-    {
-        --HetmanNumber;
-    }
+
 }
